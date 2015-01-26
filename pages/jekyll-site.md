@@ -12,7 +12,7 @@ number: 5
 
 우리나라 지킬 사용자 사이트만 보려면 아래의 경로를 보면 된다. 역시 누구나 편집이 가능하므로 자신의 사이트를 등록해도 된다.
 
- - [우리나라 지킬 사용자 사이트 위키]({{ site.gl }}/vjinn/jekyll/wiki/Jekyll-Sites)
+ - [우리나라 지킬 사용자 사이트 위키]({{ site.repo }}/wiki/Jekyll-Sites)
 
 ---
  
