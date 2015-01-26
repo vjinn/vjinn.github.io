@@ -1,0 +1,37 @@
+# Dependencies
+markdown: kramdown
+kramdown:
+ auto_ids: false
+highlighter: pygments
+
+# Permalinks
+permalink: /:categories/:title/
+relative_permalinks: false
+
+# Setup
+title: Install Jekyll
+description: $ gem install jekyll
+tagline: Enjoy Jekylling!
+keywords: Jekyll, 지킬, 마크다운, markdown, kramdown, redcarpet, rdiscount, Github, Github pages, 깃허브, 깃허브 저장소, repository, gem install jekyll, jekyll 루비, ruby, liquid, pygments, GFM
+url: http://jekyllis.com
+baseurl: /
+
+siteimg: jekylllogo.png
+
+author:
+ name: Veteran
+
+il: http://jcdn.ossguide.net/vjinn.com/jekyll
+jl: http://jekyllrb.com
+jkl: http://jekyllrb-ko.github.io
+gl: https://github.com
+repo: https://github.com/vjinn/jekyll
+
+disqus_id: installjekyll
+naveranal_id: fcbf5bf6817950
+googleanal_id: UA-48095968-2
+naverwm_id: 9f31b38fb10b5fbb750caab37be28692a1540943
+
+gems: 
+ - jekyll-mentions
+ - jekyll-sitemap

@@ -1,0 +1,64 @@
+- name: Jekyll(ko)
+  link: http://jekyllrb-ko.github.io
+  source: jekyllrb-ko/jekyllrb-ko.github.io
+  desc:  지킬 웹사이트의 한글번역 사이트
+
+- name: Nolboo's Blog
+  link: http://nolboo.github.io
+  source: nolboo/nolboo.github.io
+  desc:  Learn to do. Learn by doing.
+
+- name: AlphaFactory
+  link: http://www.alphafactory.co.kr
+  source: AlphaFactory/alphafactory.github.io
+  desc:  프로그래밍 및 앱 개발에 관심있는 건축공학도 웹사이트
+
+- name: 한량넷
+  link: http://halryang.net
+  source: Halryang/halryang.github.io
+  desc:  사람, 소통, 글쓰기, 단순한 삶, IT, Apple, 자동화, 생산성, 사진, 그림
+
+- name: Install Jekyll
+  link: http://jekyll.vjinn.com
+  source: vjinn/jekyll
+  desc: Jekyll is Awesome! 지킬 정보, 팁
+
+- name: lactrious
+  link: http://lacti.me
+  source: lacti/lacti.github.io/tree/source
+  desc: C#, C++, python, network, web
+
+- name: Kalkin's Blog
+  link: http://www.kalkinblog.tk
+  source: kalkin7/kalkin7.github.io
+  desc: Kalkin's Personal Blog
+
+- name: plan9
+  link: http://plan9.kr
+  source: sungchi/sungchi.github.io
+  desc: 폭두직딩 성치 웹사이트
+
+- name: SmallDB 
+  link: http://smalldb.net
+  source: SmallDBA/smalldba.github.com
+  desc: 보고, 듣고, 배우고, 삽푸는 것들의 기록
+
+- name: 웹으로 말하기
+  link: http://mytory.net
+  source: mytory/mytory.github.io
+  desc: 웹개발, PHP, CSS, jQuery, javascript, 아이폰
+
+- name: Rubbish Philosopher
+  link: http://blog.suminb.com
+  source: suminb/suminb.github.io
+  desc: Personal Blog
+
+- name: Jinolog
+  link: http://jinolog.com
+  source: pearlc/pearlc.github.io
+  desc: Personal Blog
+
+- name: Spoqa
+  link: http://spoqa.github.io
+  source: spoqa/spoqa.github.com
+  desc: Spoqa development blog
