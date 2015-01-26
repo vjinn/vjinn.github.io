@@ -19,8 +19,8 @@
   desc:  사람, 소통, 글쓰기, 단순한 삶, IT, Apple, 자동화, 생산성, 사진, 그림
 
 - name: Install Jekyll
-  link: http://jekyll.vjinn.com
-  source: vjinn/jekyll
+  link: http://jekyllis.com
+  source: vjinn/vjinn.github.io
   desc: Jekyll is Awesome! 지킬 정보, 팁
 
 - name: lactrious

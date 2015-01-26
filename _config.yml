@@ -25,11 +25,12 @@ il: http://jcdn.ossguide.net/vjinn.com/jekyll
 jl: http://jekyllrb.com
 jkl: http://jekyllrb-ko.github.io
 gl: https://github.com
-repo: https://github.com/vjinn/jekyll
+repo: https://github.com/vjinn/vjinn.github.io
 
 disqus_id: installjekyll
-naveranal_id: fcbf5bf6817950
-googleanal_id: UA-48095968-2
+googleanal_id: UA-58958751-1
+googlewm_id: 28wWfcMLG0rw009bmEfnTWjYfCZHxPwB_EY-SzgDdnc
+naveranal_id: d5ab09affbfe98
 naverwm_id: 9f31b38fb10b5fbb750caab37be28692a1540943
 
 gems: 
