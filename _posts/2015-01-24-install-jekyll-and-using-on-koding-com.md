@@ -4,7 +4,7 @@ title: Koding.com 서비스로 운영체제 상관없이 지킬 설치하고 사
 category: tip
 ---
 
-계정마다 일정 기준으로 제한한 무료 가상 머신(서버)을 제공하며, 웹브라우저에서 가상 머신으로 접속하여 터미널과 문서 편집기를 동시에 사용할 수 있는 서비스가 **[Koding.com](https://koding.com)**이다. 개발, 소셜코딩의 개념은 관심이 없다. 지킬 사용이 가능한지와 얼마나 편리하게 사용할 수 있는가에만 초점을 맞추자.
+계정마다 일정 기준으로 제한한 무료 가상 머신(서버)을 제공하며, 웹브라우저에서 가상 머신으로 접속하여 터미널과 문서 편집기를 동시에 사용할 수 있는 서비스가 **[Koding.com](https://koding.com)**이다. 지킬 사용이 가능한지와 얼마나 편리하게 사용할 수 있는가에만 초점을 맞추자.
 
 ![koding.com]({{ site.il }}/kodingcom.png)
 
@@ -12,7 +12,6 @@ Koding.com의 특징을 지킬과 관련하여 간단히 보면 다음과 같다
 
  - 우분투 (서버)시스템을 설치하여 가상 머신을 제공한다.
  - 말 그대로 '서버'를 제공하므로 못할 것이 거의 없다.
- - 지킬에 필요한 패키지(ruby 등)를 설치하여 제공한다.
  - 웹브라우저 기반이므로 PC 운영체제와 상관없다. (IE 제외)
  - 따라서 인터넷과 웹브라우저만 있다면 언제, 어디서든 지킬 사용이 가능하다.
  - 서브 도메인(계정.koding.io) 제공으로 지킬 사이트 변환 결과를 즉시 확인할 수 있다.
@@ -27,34 +26,25 @@ Koding.com의 특징을 지킬과 관련하여 간단히 보면 다음과 같다
 
 ## Koding.com 가상 머신에 지킬 설치하기
 
-계정이 있어야 서비스를 사용할 수 있으므로 가입하기 바란다. 깃허브 계정이 있다면 사용해도 된다. 가입 관련한 내용은 이야기하지 않는다. **Koding.com 로그인은 가상 머신 접속**과 같다는 것을 기억하자.
+계정이 있어야 서비스를 사용할 수 있으므로 가입하기 바란다. 깃허브 계정이 있다면 사용해도 되며, 가입 관련한 내용은 이야기하지 않는다. **Koding.com 로그인은 가상 머신 접속**과 같다는 것을 기억하자.
 
-지킬을 사용하기 위해서는 가상 머신에 지킬을 설치해야 한다. 이전에는 PC의 [우분투 데스크톱 환경에서 지킬을 설치](/install-jekyll/#리눅스에서-지킬-설치)하는 것과 똑같은 패키지 설치 방법으로 가능했던 것으로 기억하는데, 글 작성일 기준에서 가상 머신을 처음 생성했다면 조금 틀리다.
-
-걱정할 필요는 없다. 항상 기준을 `gem install jekyll`로 생각하면 된다. 새로운 환경이라 하더라도 지킬 설치 명령을 통해 어떤 문제가 있는지 얻고 확인하면서 하나씩 해결하면 된다는 것만 기억하자.
-
-글 작성일 기준으로 Koding.com에서 가상 머신 처음 생성 시 우분투 배포판은 **14.04** 버전이다. 순수 배포판은 아닐 것으로 생각한다. 이 기준에서 지킬 사용에 필요한 명령은 아래에 있다. 이 명령 라인만 입력하면 끝이다. *(`make` 정의가 궁금하면 검색하자. 몰라도 된다.)* 더 이상 없다.
+지킬을 사용하기 위해서는 가상 머신에 지킬을 설치해야 한다. [리눅스 데스크톱 환경에서 지킬 설치 요약](/install-jekyll/#요약)과 똑같다. 서버이므로 오히려 과정이 줄어든다. 루비를 RVM으로 설치한다는 것을 꼭 기억하기 바란다.
 
 {% highlight bash %}
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install make
-$ sudo apt-get gem install jekyll --no-rdoc --no-ri
+$ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ source ~/.rvm/scripts/rvm
+$ rvm install ruby-2.2.0
+$ gem install jekyll
 {% endhighlight %}
 
-위의 명령 4번째의 옵션은 선택사항이다. 일반적인 명령을 입력해도 전혀 상관없다.
-
-{% highlight bash %}
-$ sudo apt-get gem install jekyll
-{% endhighlight %}
-
-다음의 영상을 참고하자.
+위의 명령 라인이면 더 이상 할 것이 없다. 텍스트 설명은 생략하며 다음의 영상을 참고하자. 지킬 사이트 생성, koding.com의 서비스에서 지킬 사용, 깃허브 푸쉬와 관련한 내용이 들어있다.
 
 <div class="video">
-<iframe width="560" height="315" src="//www.youtube.com/embed/OKVM3CNTSRw" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//www.youtube.com/embed/X96DYQkCcP8" frameborder="0" allowfullscreen></iframe> allowfullscreen></iframe>
 </div>
 
-Koding.com의 가상 머신에서 `sudo` 패스워드는 입력하지 않아도 된다는 것을 기억하자. PC 데스크톱에서 설치했던 `nodejs`는 설치하지 않아도 된다. 만약의 경우를 생각한다면 아래의 명령으로 설치하는 것도 좋다.
+Koding.com의 가상 머신에서 `sudo` 패스워드는 입력하지 않아도 되며, RVM으로 루비 설치 후 `gem` 패키지 설치도 마찬가지이다. 데스크톱 버전에서 설치했던 `nodejs`는 설치하지 않아도 된다. 만약의 경우를 생각한다면 아래의 명령으로 설치하는 것도 좋다.
 
 {% highlight bash %}
 $ sudo apt-get install nodejs
