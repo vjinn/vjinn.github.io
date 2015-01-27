@@ -30,13 +30,13 @@ Koding.com의 특징을 지킬과 관련하여 간단히 보면 다음과 같다
 
 지킬을 사용하기 위해서는 가상 머신에 지킬을 설치해야 한다. [리눅스 데스크톱 환경에서 지킬 설치 요약](/install-jekyll/#요약)과 똑같다. 서버이므로 오히려 과정이 줄어든다. 루비를 RVM으로 설치한다는 것을 꼭 기억하기 바란다.
 
-{% highlight bash %}
+```bash
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 $ \curl -sSL https://get.rvm.io | bash -s stable
 $ source ~/.rvm/scripts/rvm
 $ rvm install ruby-2.2.0
 $ gem install jekyll
-{% endhighlight %}
+```
 
 위의 명령 라인이면 더 이상 할 것이 없다. 텍스트 설명은 생략하며 다음의 영상을 참고하자. 지킬 사이트 생성, koding.com의 서비스에서 지킬 사용, 깃허브 푸쉬와 관련한 내용이 들어있다.
 
@@ -46,8 +46,8 @@ $ gem install jekyll
 
 Koding.com의 가상 머신에서 `sudo` 패스워드는 입력하지 않아도 되며, RVM으로 루비 설치 후 `gem` 패키지 설치도 마찬가지이다. 데스크톱 버전에서 설치했던 `nodejs`는 설치하지 않아도 된다. 만약의 경우를 생각한다면 아래의 명령으로 설치하는 것도 좋다.
 
-{% highlight bash %}
+```bash
 $ sudo apt-get install nodejs
-{% endhighlight %}
+```
 
 Koding.com은 지킬 사용을 위한 환경의 구성, 그리고 글쓰기에 이상적인 서비스로 생각할 수 있다. 그래도 '선택사항'이다.

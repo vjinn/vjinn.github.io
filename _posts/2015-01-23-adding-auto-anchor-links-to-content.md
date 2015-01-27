@@ -12,9 +12,9 @@ category: tip
 
 지킬 공식 웹사이트는 현재 마크다운 엔진으로 `kramdown`을 사용 중인 것으로 보인다. 이 엔진을 사용하여 문서를 작성 후 사이트를 변환하면 자동으로 `id=문단 제목` 형식으로 소스가 생성된다. 예를 들어, 문단 제목이 **Jekyll is Awesome**, 문서 작성 시 `## Jekyll is Awesome`으로 입력했다면 사이트 변환 후 `html` 소스는 다음과 같이 생성된다.
 
-{% highlight html %}
+```html
 <h2 id="jekyll-is-awesome">
-{% endhighlight %}
+```
 
 마크다운 엔진으로 `kramdown`만 사용해도 `#, ##, ...`와 같은 문단 계층 구분으로 문서 작성 시 자동으로 문단의 `id`가 부여되므로 하나의 페이지 내에 존재하는 고유주소가 된다. 사이트 내부 또는 외부에서 문서 참조로 활용할 수 있다. 하지만 역시 문제가 있다.
 
@@ -36,12 +36,12 @@ category: tip
 
 필요한 것은 2개의 파일 `anchor.min.js`, `anchor.css` 그리고 `index.html` 소스 맨 아래의 일부 코드이다.
 
-{% highlight js %}
-    var selector = 'h2';
-    addAnchors(selector);
-{% endhighlight %}
+```js
+var selector = 'h2';
+	addAnchors(selector);
+```
 
-텍스트 설명은 하지 않는다. 아래의 영상으로 대신한다.
+텍스트 설명은 하지 않는다. 아래의 영상으로 대신한다. 영상에서 사용한 테마는 지킬 1.5.1 까지의 [기본 테마]({{ site.gl }}/vjinn/theme151)이다.
 
 <div class="video">
 <iframe width="560" height="315" src="//www.youtube.com/embed/Bo4tkLZAY8U" frameborder="0" allowfullscreen></iframe>
@@ -49,4 +49,4 @@ category: tip
 
 영상과 같이 스크립트 삽입 시 `_includes` 디렉터리에 `anchor.html` 파일로 만들어 템플릿에는 인클루드 태그를 사용하는 것이 좋다.
 
-이 사이트는 `kramdown` 엔진으로 이 페이지의 내용을 적용했으므로 이 사이트의 저장소 [소스]({{ site.repo }})를 참고하면 도움 되지 않을까 생각한다.
+이 사이트의 저장소 [소스]({{ site.repo }})를 참고하면 도움 되지 않을까 생각한다.
