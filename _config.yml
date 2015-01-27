@@ -3,7 +3,8 @@ markdown: kramdown
 kramdown:
  auto_ids: false
  input: GFM
-highlighter: pygments
+ use_coderay: true
+ coderay_line_numbers: nil
 
 # Permalinks
 permalink: /:categories/:title/
