@@ -2,6 +2,7 @@
 markdown: kramdown
 kramdown:
  auto_ids: false
+ input: GFM
 highlighter: pygments
 
 # Permalinks
