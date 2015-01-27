@@ -50,6 +50,10 @@ $ sudo apt-get install nodejs
 $ gem install jekyll
 ```
 
+다음의 링크는 우분투와 리눅스 민트 데스크탑에서 지킬 설치 영상이다. 한 번 참고하면 된다.
+
+ - [How to Install Jekyll on Ubuntu and Linux Mint Desktop with RVM](http://youtu.be/lLLFAYoNHv4)
+
 아래는 설명을 조금 더한 내용이다.
 
 ### 지킬이 요구하는 패키지 설치
