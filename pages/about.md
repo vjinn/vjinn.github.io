@@ -29,12 +29,12 @@ number: 1
  - 윈도즈 7 64비트의 VMware Player 7.0 에서
  - 우분투 14.04 64비트 데스크톱 버전 환경
  - LEOPOLD FC750R Tenkeyless (적축 / 측각 / 네이비 블루) 키보드 사용
- - gedit 또는 vim 사용
+ - gedit (드물게 vim 사용)
  - IE 9 이상, 나머지 표준 웹브라우저 지원
  - 한글은 [나눔고딕](http://hangeul.naver.com/2014/nanum#)과 맑은고딕 순서로 적용
 
 
-가벼운 질문이나 문의가 있다면 다음의 링크를 찾기 바란다.
+가벼운 질문, 의견, 토론은 다음의 링크를 찾는 것이 좋다.
 
  - [Forum]({{ site.repo }}/issues)
 
