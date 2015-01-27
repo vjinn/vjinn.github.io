@@ -40,7 +40,7 @@ number: 3
 
 아래 명령 라인을 하나씩 입력하여 실행 및 진행 후 터미널 설정만 아래에 나오는 내용을 참고하여 변경하면 된다. 4번째 명령 라인에서 `vjinn`은 자신의 정보로 변경하면 된다.
 
-{% highlight bash %}
+```bash
 $ sudo apt-get install curl
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 $ \curl -sSL https://get.rvm.io | bash -s stable
@@ -48,7 +48,7 @@ $ source /home/vjinn/.rvm/scripts/rvm
 $ rvm install ruby-2.2.0
 $ sudo apt-get install nodejs
 $ gem install jekyll
-{% endhighlight %}
+```
 
 아래는 설명을 조금 더한 내용이다.
 
@@ -56,20 +56,20 @@ $ gem install jekyll
 
 터미널을 실행하고 아래의 명령을 그대로 입력하여 `curl`을 설치하자. RVM을 설치하기 위한 것이다. 설치 물음이 나오면 **Y**를 눌러 진행하면 된다. 이후의 과정도 같다.
 
-{% highlight bash %}
+```bash
 $ sudo apt-get install curl
-{% endhighlight %}
+```
 
 다음의 두 명령 라인의 내용은 [RVM](https://rvm.io/) 웹사이트에 접속하면 즉시 얻을 수 있다. 복사해서 사용하기 바란다. 이것만 하면 RVM 설치는 끝이다.
 
-{% highlight bash %}
+```bash
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 $ \curl -sSL https://get.rvm.io | bash -s stable
-{% endhighlight %}
+```
 
 다음 과정이 중요하다. 위의 명령으로 RVM 설치가 끝났다면 아래와 같은 메시지를 볼 수 있을 것이다.
 
-{% highlight bash %}
+```bash
 Installing RVM to /home/vjinn/.rvm/
     Adding rvm PATH line to /home/vjinn/.profile /home/vjinn/.mkshrc /home/vjinn/.bashrc /home/vjinn/.zshrc.
     Adding rvm loading line to /home/vjinn/.profile /home/vjinn/.bash_profile /home/vjinn/.zlogin.
@@ -77,13 +77,13 @@ Installation of RVM in /home/vjinn/.rvm/ is almost complete:
 
   * To start using RVM you need to run `source /home/vjinn/.rvm/scripts/rvm`
     in all your open shell windows, in rare cases you need to reopen all shell windows.
-{% endhighlight %}
+```
 
 위의 내용은 *'설치 잘 됐고요, 프로파일에 RVM 경로는 추가됐는데 RVM 사용하려면 터미널에 한 줄 명령을 넣어야 합니다.'* 라는 것이다. 그 한 줄 내용은 다음과 같다. 입력 및 실행해도 되지만 하지 말자.
 
-{% highlight bash %}
+```bash
 $ source /home/vjinn/.rvm/scripts/rvm
-{% endhighlight %}
+```
 
 위의 명령을 실행하면 터미널을 종료하기 전에는 루비 설치, 지킬 설치와 사용, 루비 버전 확인, 지킬 버전 확인 등 모든 것이 가능하지만, 터미널을 종료 후 재실행 하면 다시 입력해야 한다. 그렇지 않으면 아무것도 할 수가 없다.
 
@@ -102,65 +102,65 @@ RVM 설치 시 분명 경로가 추가됐다는 메시지가 있고, 확인하�
 
 다음의 명령을 실행하자.
 
-{% highlight bash %}
+```bash
 $ rvm install ruby-2.2.0
-{% endhighlight %}
+```
 
 설치 후 루비 버전을 확인하자.
 
-{% highlight bash %}
+```bash
 $ ruby -v
 ruby 2.2.0p0 (2014-12-25 revision 49005) [x86_64-linux]
-{% endhighlight %}
+```
 
 다음으로 지킬 버전 2.x 부터 필요한 `nodejs`를 설치하자.
 
-{% highlight bash %}
+```bash
 $ sudo apt-get install nodejs
-{% endhighlight %}
+```
 
 ### 지킬 설치 및 확인
 
 바로 지킬을 설치하자. 지킬은 `gem` 패키지로 배포하는데 리눅스 배포판의 패키지 관리자로 루비를 설치하지 않았고, 싱글 모드로 RVM을 설치했으므로 `sudo`는 사용하지 않아도 된다.
 
-{% highlight bash %}
+```bash
 $ gem install jekyll
-{% endhighlight %}
+```
 
 *빠른 설치를 위해 아래와 같이 옵션을 주는 경우가 있다. 문서는 설치하지 않겠다는 것이다.*
 
-{% highlight bash %}
+```bash
 $ gem install jekyll --no-rdoc --no-ri
-{% endhighlight %}
+```
 
 설치가 끝나면 지킬 버전을 확인해 보자.
 
-{% highlight bash %}
+```bash
 $ jekyll -v
-{% endhighlight %}
+```
 
 ### 사이트 생성, 변환 테스트 
 
 아래의 명령으로 사이트를 생성하자.
 
-{% highlight bash %}
+```bash
 $ jekyll new mysite
-{% endhighlight %}
+```
 
-아래의 명령으로 생성한 사이트로 접근하고 사이트 변환하자. `jekyll serve` 명령 후 터미널에 나오는 **Server address: http://127.0.0.1:4000/**에서 아이피 부분을 `Ctrl +` 클릭하여 웹브라우저에서 사이트를 확인하자. 문제가 없다면 리눅스에서 지킬 설치는 끝이다. 너무 간단하다.
+아래의 명령으로 생성한 사이트로 접근하고 사이트 변환하자. `jekyll serve` 명령 후 터미널에 나오는 **Server address: http://127.0.0.1:4000**에서 아이피 부분을 `Ctrl +` 클릭하여 웹브라우저에서 사이트를 확인하자. 문제가 없다면 리눅스에서 지킬 설치는 끝이다. 너무 간단하다.
 
-{% highlight bash %}
+```bash
 $ cd mysite
 $ jekyll serve
-{% endhighlight %}
+```
 
 *localhost:4000과 127.0.0.1:4000에서 후자로 사이트를 확인하는 것이 유리할 때가 많다. 가령 코멘트 시스템 **Livefyre**를 사용하기 위해 코드를 삽입하고 웹브라우저에 확인할 때 나오지 않는 경우는 전자의 경우이다.*
 
 리눅스 배포판의 패키지 관리자로 설치한 루비가 있다면 삭제하는 것이 좋다. 안해도 문제는 없다. 다음과 같이 하자.
 
-{% highlight bash %}
+```bash
 $ sudo apt-get remove --purge ruby
-{% endhighlight %}
+```
 
 지킬 버전 1.x에서 루비 2.x 버전을 사용하면 에러 메시지가 계속 나올 수 있다. 사용 시 발생하는 문제는 거의 없다. 거슬린다면 RVM으로 루비 1.9.3을 설치하고, 루비 사용 버전을 변경, 지킬 1.x 재설치*(설치라기 보다 변경한 루비 버전에 이 버전의 지킬을 사용하겠다는 정의로 생각하면 된다.)* 하면 된다. 하지만 1.x 버전의 지킬은 그만 쓰자.
 
@@ -170,49 +170,49 @@ $ sudo apt-get remove --purge ruby
 
 지킬 **특정 버전을 사용**하고 싶다면 아래와 같은 옵션을 주면 된다. (예, 1.5.1)
 
-{% highlight bash %}
+```bash
 $ gem install jekyll -v 1.5.1
-{% endhighlight %}
+```
 
 **지킬 삭제**는 아래와 같다.
 
-{% highlight bash %}
+```bash
 $ gem uninstall jekyll
-{% endhighlight %}
+```
 
 **특정 버전 삭제**는 아래와 같다. (예, 1.5.1)
 
-{% highlight bash %}
+```bash
 $ gem uninstall jekyll -v 1.5.1
-{% endhighlight %}
+```
 
 다양한 지킬 버전이 설치되어 있을 때 **최신 버전 제외 모두 삭제**는 아래와 같다.
 
-{% highlight bash %}
+```bash
 $ gem cleanup jekyll
-{% endhighlight %}
+```
 
 **지킬 버전 업데이트**는 아래와 같다. `gem update`를 사용하는 것이 좋다.
 
-{% highlight bash %}
+```bash
 $ gem update
-또는
+or
 $ gem update jekyll
-{% endhighlight %}
+```
 
 **설치한 지킬 또는 `gem` 패키지 목록**은 다음의 명령으로 확인할 수 있다.
 
-{% highlight bash %}
+```bash
 $ gem list
-또는
+or
 $ gem list jekyll
-{% endhighlight %}
+```
 
 위의 내용들은 아래의 명령을 통해 도움을 얻을 수 있다.
 
-{% highlight bash %}
+```bash
 $ gem help
-{% endhighlight %}
+```
 
 지킬 버전을 한 눈에 보고 싶다면 아래 링크를 보자.
 
@@ -242,9 +242,9 @@ $ gem help
 
 이 패키지에는 루비 2.x 버전이 포함되어 있어 **지킬 버전 3.x 사용이 가능**하며, 업데이트가 가능하다. 위의 2, 3번을 시행한 후 CMD에 `gem update`만 입력하면 된다. (윈도즈 CMD는 `sudo`가 필요 없다.)
 
-{% highlight bash %}
+```bash
 > gem update
-{% endhighlight %}
+```
 
 문제가 없다면 지킬과 의존 패키지들이 모두 업데이트되었을 것이다.
 

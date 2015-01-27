@@ -206,8 +206,6 @@ $ pwd
 
 아래 영상은 이 페이지의 내용 일부를 실행한 것이다. 때로는 GUI 환경에서, 때로는 터미널에서 실행한 것인데 기본 생성 및 테마 다운로드로 생성에 대한 내용이다. 가볍게 참고로 보면 된다.
 
-http://www.youtube.com/embed/5Td33bQPLf4
-
 <div class="video">
 <iframe src="//www.youtube.com/embed/5Td33bQPLf4" frameborder="0" allowfullscreen></iframe>
 </div>
