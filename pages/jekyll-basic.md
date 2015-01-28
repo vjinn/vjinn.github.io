@@ -160,7 +160,24 @@ $ jekyll build
 
 `jekyll-compose` 플러그인은 터미널에서 포스트 작성 시 편의를 더해 주는 것인데, 로컬에서 사용하기 위한 것이며 사이트 변환과는 관련이 없다.
 
+깃허브에 호스팅한다면 로컬에 설치할 필요가 없는 지킬 플러그인도 있다.
+
+ - [Using Jekyll Plugins with GitHub Pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages/)
+
+로컬에 설치하지 않아도 되지만, `_config.yml`에 정의해야 하며, 그로 인해 사이트 변환 (`serve`, `build`) 시 에러 메시지가 나온다. 로컬에서 미리보기를 위해 설치하는 것이 좋다. 깃허브 호스팅 시 로컬에 설치하지 않아도 된다는 것만 기억하자. 물론 깃허브가 아닌 보통의 서버 환경에 호스팅한다면 설치해야 하며, 변환한 사이트 파일(`_site/`)을 업로드 해야 한다.
+
 플러그인에 대한 것은 적용하는 과정에서 조금씩 이해하는 것이 좋다.
+
+## Github Pages
+
+깃허브 호스팅은 **Github Pages**를 사용하는 것과 같은 말이다. 위에서 말한 플러그인 사용 등 결국 깃허브에 사이트를 호스팅한다면 다음의 링크에 나오는 깃허브 페이지의 버전을 참고해야 한다. 지킬 버전도 다르다. 하지만 대부분 문제가 없으므로 신경을 쓰지 않아도 된다.
+
+이를 위해 깃허브 페이지에서 지킬을 사용하는 방법과 깃허브 페이지와 같은 버전의 지킬 및 패키지를 사용할 수 있도록 **GitHub Pages Ruby Gem**도 제공한다.
+
+ - [Using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/)
+ - [GitHub Pages Ruby Gem]({{ site.gl }}/github/pages-gem)
+
+프로젝트나 특정한 경우가 아니면 위의 내용은 염두에 두지 말자.
 
 ## 경로, PWD
 
