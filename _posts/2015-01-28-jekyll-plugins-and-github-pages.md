@@ -55,7 +55,7 @@ $ git commit -m "아침엔 :apple:"
  - 이 사이트는 @jekyll로 구성했다. (o)
  - 지킬 저장소는 @jekyll/jekyll이다. (x)
 
-기본 값이 깃허브 URL이지만 원하는 정보로 변경할 수 있다. `_comfig.yml`에 정의하면 된다. 아래의 `base_url`의 값을 원하는 값으로 입력하면 된다.
+기본 값이 깃허브 URL이지만 원하는 정보로 변경할 수 있다. `_config.yml`에 정의하면 된다. 아래의 `base_url`의 값을 원하는 값으로 입력하면 된다.
 
 ```yaml
 jekyll-mentions:
