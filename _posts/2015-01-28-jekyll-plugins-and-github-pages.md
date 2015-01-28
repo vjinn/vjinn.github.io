@@ -24,10 +24,10 @@ $ gem install jekyll-sitemap
 
 ```yaml
 gems:
-- jekyll-mentions
-- jemoji
-- jekyll-redirect-from
-- jekyll-sitemap
+ - jekyll-mentions
+ - jemoji
+ - jekyll-redirect-from
+ - jekyll-sitemap
 ```
 
 ## Jemoji
