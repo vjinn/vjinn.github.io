@@ -9,8 +9,8 @@ relative_permalinks: false
 
 # Setup
 title: Install Jekyll
-description: $ gem install jekyll
-tagline: Enjoy Jekylling!
+description: Enjoy Jekylling!
+tagline: $ gem install jekyll
 keywords: Jekyll, 지킬, 마크다운, markdown, kramdown, redcarpet, rdiscount, Github, Github pages, 깃허브, 깃허브 저장소, repository, gem install jekyll, jekyll 루비, ruby, liquid, pygments, GFM
 url: http://jekyllis.com
 baseurl: /
