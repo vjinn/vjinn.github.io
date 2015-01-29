@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+xmlns:content="http://purl.org/rss/1.0/modules/content/"
+xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+>
+<channel>
+<title xml:lang="ko">Install Jekyll • Enjoy Jekylling!</title>
+<atom:link type="application/atom+xml" href="http://jekyllis.com/feed.xml" rel="self"/>
+<link>http://jekyllis.com</link>
+<pubDate>Thu, 29 Jan 2015 16:20:05 +0900</pubDate>
+<lastBuildDate>Thu, 29 Jan 2015 16:20:05 +0900</lastBuildDate>
+<language>ko-KR</language>
+<generator>Jekyll v2.5.3</generator>
+<description>Enjoy Jekylling!</description>
+<image>
+<description>Install Jekyll</description>
+<url>http://jcdn.ossguide.net/jekyllis.com/jekylllogo.png</url>
+<title>Install Jekyll • Enjoy Jekylling!</title>
+<link>http://jekyllis.com</link>
+<width>144</width>
+<height>67</height>
+</image>
+
+<item>
+<title>Glynn으로 일반 웹호스팅에 지킬 사이트 업로드 하기</title>
+<link>http://jekyllis.com/tip/jekyll-site-web-hosting-using-glynn/</link>
+<pubDate>Tue, 29 Jan 2019 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>tip</category>
+
+<guid isPermaLink="true">http://jekyllis.com/tip/jekyll-site-web-hosting-using-glynn/</guid>
+<description>&lt;p&gt;일반 웹호스팅 서비스에 지킬 사이트를 게시할 때는 &lt;code&gt;_site&lt;/code&gt; 디렉터리의 파일을 FTP 방식으로 업로드하면 된다. 물론 깃허브 페이지에 호스팅을 원한다면 사이트 소스 푸쉬만으로도 가능하며, 특정 플러그인 사용에 의해 반려 된다면 &lt;code&gt;_site&lt;/code&gt; 디렉터리의 파일만 푸쉬하면 호스팅이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;지킬 사이트를 호스팅하는 방법에 대한 내용은 다음의 링크에 잘 나와 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/docs/deployment-methods/&quot;&gt;Deployment methods&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jekyllrb-ko.github.io/docs/deployment-methods/&quot;&gt;지킬 사이트 게시 방법&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그 중에 터미널에서 FTP 방식의 업로드를 통한 지킬 사이트 게시 방법에 대해 간단히 알아보자.&lt;/p&gt;
+
+&lt;h2&gt;Glynn&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dmathieu/glynn&quot;&gt;Glynn&lt;/a&gt;, 지킬 사이트 게시를 위한 프로젝트라고 알려져 있다. 설치는 다음과 같다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install glynn --source http://gemcutter.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;다음과 같은 정보가 있다고 가정하자.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FTP Host : glynn.jekyllis.com&lt;/li&gt;
+&lt;li&gt;FTP DIR : /home/glynn/www&lt;/li&gt;
+&lt;li&gt;FTP Passive : false&lt;/li&gt;
+&lt;li&gt;Port : 21&lt;/li&gt;
+&lt;li&gt;FTP Username : glynn&lt;/li&gt;
+&lt;li&gt;FTP Password : 1234&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 가상의 정보로 Glynn을 사용하기 위해 &lt;code&gt;_config.yml&lt;/code&gt; 파일에 다음의 내용을 추가하면 된다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ftp_host&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;glynn.jekyllis.com&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ftp_dir&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;/home/glynn/www&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ftp_passive&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ftp_port&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;21&lt;/span&gt;        
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ftp_username&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;glynn&amp;#39;&lt;/span&gt; 
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;ftp_password&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;#39;1234&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Port, Username, Password 정보는 설정에 추가하지 않아도 된다. 기본 포트를 사용하지 않는다면 추가하면 되고, Username, Password는 설정 파일에 없으면 Glynn 실행 시 묻는다. 그 때 입력하면 된다.&lt;/p&gt;
+
+&lt;p&gt;Glynn 실행은 간단하게 다음과 같다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;glynn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Glynn은 사이트 변환 명령을 포함한다. &lt;code&gt;jekyll build&lt;/code&gt;, &lt;code&gt;_site&lt;/code&gt;
+fsdfsdfsdfsdfsdfsdfsdfsdfsfssf&lt;/p&gt;
+</description>
+</item>
+
+<item>
+<title>지킬 플러그인과 깃허브 페이지 플러그인</title>
+<link>http://jekyllis.com/tip/jekyll-plugins-and-github-pages/</link>
+<pubDate>Wed, 28 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>tip</category>
+
+<guid isPermaLink="true">http://jekyllis.com/tip/jekyll-plugins-and-github-pages/</guid>
+<description>&lt;p&gt;간단하며 기본적인 지킬 플러그인이 몇가지 있는데 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jemoji&quot;&gt;Jemoji&lt;/a&gt; : 지킬 사이트 변환 시 그래픽 이모티콘 표현&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-mentions&quot;&gt;Jekyll-mentions&lt;/a&gt; : &lt;code&gt;@&lt;/code&gt;+&lt;code&gt;username&lt;/code&gt; 사용만으로 깃허브 계정 링크로 자동 변환&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-redirect-from&quot;&gt;Jekyll-redirect-from&lt;/a&gt; : 포스트나 페이지 접근 시 특정 URL로 리디렉트&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-sitemap&quot;&gt;Jekyll-sitemap&lt;/a&gt; : 지킬 사이트의 사이트맵 생성 (로컬에서는 사이트 변환 시)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;위의 4가지 플러그인은 로컬에서 다음과 같이 설치할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jemoji
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll-mentions
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll-redirect-from
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll-sitemap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;설치 후 4가지 플러그인 모두 &lt;code&gt;_config.yml&lt;/code&gt; 파일에 다음과 같이 추가만 하면 된다. 물론 사용을 원하는 플러그인만 입력한다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;jekyll-mentions&lt;/span&gt;
+ &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;jemoji&lt;/span&gt;
+ &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;jekyll-redirect-from&lt;/span&gt;
+ &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;jekyll-sitemap&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Jemoji&lt;/h2&gt;
+
+&lt;p&gt;설치와 설정 파일 추가 후 글쓰기에 원하는 이미티콘 텍스트를 입력하면 되고, 이모티콘 시트는 아래의 2개의 링크에서 참고 하자.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://emoji.muan.co/&quot;&gt;Emoji searcher&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.emoji-cheat-sheet.com/&quot;&gt;Emoji cheat sheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;아래 예제에서 진한 부분의 텍스트처럼 입력하면 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;지킬 플러그인 &lt;code&gt;jemoji&lt;/code&gt;는 정말 최고입니다. &lt;strong&gt;:+1:&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;오늘은 지킬 씨의 100번 째 &lt;strong&gt;:100:&lt;/strong&gt; 생일입니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;별개로 &lt;a href=&quot;https://github.com/github/gemoji&quot;&gt;Gemoji&lt;/a&gt;라는 것도 있는데, 깃허브 시스템(사이트)에서 사용할 수 있으며, 터미널에서 깃허브로 사이트를 푸쉬할 때 커밋 메시지에 넣을 수도 있다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s2&quot;&gt;&amp;quot;아침엔 :apple:&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Jekyll-mentions&lt;/h2&gt;
+
+&lt;p&gt;글쓰기에 깃허브 사용자의 소스를 참고하여, 글 내용에 해당 사용자의 깃허브 페이지를 링크할 때 아주 유용하다. 트위터 맨션처럼 생각하면 된다. 하지만 맨션에 대한 알림은 안된다. 다음과 같이 단순하게 입력하면 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;이 사이트는 &lt;a href=&#39;https://github.com/jekyll&#39; class=&#39;user-mention&#39;&gt;@jekyll&lt;/a&gt;로 구성했다. (o)&lt;/li&gt;
+&lt;li&gt;지킬 저장소는 @jekyll/jekyll이다. (x)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;기본 값이 깃허브 URL이지만 원하는 정보로 변경할 수 있다. &lt;code&gt;_config.yml&lt;/code&gt;에 정의하면 된다. 아래의 &lt;code&gt;base_url&lt;/code&gt;의 값을 원하는 값으로 입력하면 된다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;jekyll-mentions&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;base_url&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;https://twitter.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Jekyll-sitemap&lt;/h2&gt;
+
+&lt;p&gt;로컬에서 사이트를 변환하면 &lt;code&gt;_site&lt;/code&gt;에 &lt;code&gt;sitemap.xml&lt;/code&gt; 파일을 생성한다. 설치와 설정만 하는 것으로 끝이다. 처음 설치했다면 &lt;code&gt;_site&lt;/code&gt; 디렉터리를 확인하여 사이트맵 파일이 생성되는지 한 번만 확인하자.&lt;/p&gt;
+
+&lt;h2&gt;Jekyll-redirect-from&lt;/h2&gt;
+
+&lt;p&gt;예를 들어, 이전에 작성한 &lt;code&gt;aaa.md&lt;/code&gt; 포스트가 있고 실제 포스트 주소를 &lt;code&gt;/aaa/&lt;/code&gt;라고 하자. &lt;code&gt;bbb.md&lt;/code&gt; 포스트를 작성하면서 프런트 메터(front-matter)에 다음과 같은 옵션을 추가했다고 가정하자.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;redirect_from&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;/aaa/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;사이트 변환 후 실제 웹사이트에서 /aaa/ 포스트로 접근하면 /bbb/ 포스트로 리디렉트한다. &lt;code&gt;_site&lt;/code&gt; 디렉터리에서 &lt;code&gt;/aaa/index.html&lt;/code&gt; 파일을 열면 다음과 같은 내용으로 변경되어 있을 것이다. 사이트 소스 디렉터리의 &lt;code&gt;aaa.md&lt;/code&gt; 파일의 내용은 변하지 않으므로 걱정하지 않아도 된다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;utf-8&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Redirecting...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;canonical&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/bbb/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;refresh&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;0; url=/bbb/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Redirecting...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;/bbb/&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click here if you are not redirected.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;/bbb/&amp;#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여러 포스트를 리디렉트할 수 있다. 위의 설정 예에서 /aaa/ 밑으로 원하는 포스트 URL을 입력하면 된다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;redirect_from&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;/aaa/&lt;/span&gt;
+  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;/ccc/&lt;/span&gt;
+  &lt;span class=&quot;p-Indicator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;/ddd/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;주의할 것은 &lt;strong&gt;&amp;#39;/&amp;#39;&lt;/strong&gt;와 &lt;strong&gt;사이트 변환 시 생성되는 포스트 URL&lt;/strong&gt;을 입력해야 한다는 것이다. 직접 테스트하면 금방 알 수 있다.&lt;/p&gt;
+
+&lt;h2&gt;Github Pages&lt;/h2&gt;
+
+&lt;p&gt;위의 4가지 플러그인은 깃허브에 호스팅을 한다면 로컬에 설치하지 않아도 된다. 설정 파일에 추가하는 것만 진행 후 깃허브에 푸쉬하면 된다. &lt;strong&gt;깃허브 페이지&lt;/strong&gt;가 이 플러그인을 지원하기 때문이다. 패키지 버전이 다를 수 있지만, 위의 플러그인들은 문제가 거의 없을 것이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/using-jekyll-plugins-with-github-pages/&quot;&gt;Using Jekyll Plugins with GitHub Pages&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;플러그인을 설치하지 않고 설정에만 추가했는데 사이트 변환 명령을 실행하면 에러 메시지가 나올 것이다. 설정은 있는데 플러그인이 설치되지 않아서 나오는 메시지이므로 걱정할 것 없다. 하지만 사용하는 플러그인이라면 로컬에서도 설치하는 것이 좋다.&lt;/p&gt;
+
+&lt;p&gt;깃허브가 아니라면 플러그인을 설치, 설정하여 사이트 변환 후 &lt;code&gt;_site&lt;/code&gt;의 파일을 내보내면 된다.&lt;/p&gt;
+</description>
+</item>
+
+<item>
+<title>Koding.com 서비스로 운영체제 상관없이 지킬 설치하고 사용</title>
+<link>http://jekyllis.com/tip/install-jekyll-and-using-on-koding-com/</link>
+<pubDate>Sat, 24 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>tip</category>
+
+<guid isPermaLink="true">http://jekyllis.com/tip/install-jekyll-and-using-on-koding-com/</guid>
+<description>&lt;p&gt;계정마다 일정 기준으로 제한한 무료 가상 머신(서버)을 제공하며, 웹브라우저에서 가상 머신으로 접속하여 터미널과 문서 편집기를 동시에 사용할 수 있는 서비스가 &lt;strong&gt;&lt;a href=&quot;https://koding.com&quot;&gt;Koding.com&lt;/a&gt;&lt;/strong&gt;이다. 지킬 사용이 가능한지와 얼마나 편리하게 사용할 수 있는가에만 초점을 맞추자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jcdn.ossguide.net/jekyllis.com/kodingcom.png&quot; alt=&quot;koding.com&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Koding.com의 특징을 지킬과 관련하여 간단히 보면 다음과 같다. 글 작성일 기준이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;우분투 (서버)시스템을 설치하여 가상 머신을 제공한다.&lt;/li&gt;
+&lt;li&gt;말 그대로 &amp;#39;서버&amp;#39;를 제공하므로 못할 것이 거의 없다.&lt;/li&gt;
+&lt;li&gt;웹브라우저 기반이므로 PC 운영체제와 상관없다. (IE 제외)&lt;/li&gt;
+&lt;li&gt;따라서 인터넷과 웹브라우저만 있다면 언제, 어디서든 지킬 사용이 가능하다.&lt;/li&gt;
+&lt;li&gt;서브 도메인(계정.koding.io) 제공으로 지킬 사이트 변환 결과를 즉시 확인할 수 있다.&lt;/li&gt;
+&lt;li&gt;서브 도메인은 로컬 PC와 다르므로 다른 기기 환경에서도 사이트 결과를 확인할 수 있다.&lt;/li&gt;
+&lt;li&gt;가상 머신을 종료하면 서브 도메인 연결이 불가하다.&lt;/li&gt;
+&lt;li&gt;따라서 실제 운영 사이트가 아니라면 걱정할 필요가 없다.&lt;/li&gt;
+&lt;li&gt;웹브라우저 기반의 작업이지만, 지킬 사용에 필요한 기능은 모두 있다.&lt;/li&gt;
+&lt;li&gt;파일 드래그 앤드 드롭을 지원하므로 글쓰기 흐름을 최대한 유지할 수 있다.&lt;/li&gt;
+&lt;li&gt;지킬 사용만은 PC의 우분투 데스크톱과 다른 점, 불편한 점을 느끼지 못한다.&lt;/li&gt;
+&lt;li&gt;터미널에서는 한글 입력이 안된다.&lt;/li&gt;
+&lt;li&gt;크롬 앱이 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Koding.com 가상 머신에 지킬 설치하기&lt;/h2&gt;
+
+&lt;p&gt;계정이 있어야 서비스를 사용할 수 있으므로 가입하기 바란다. 깃허브 계정이 있다면 사용해도 되며, 가입 관련한 내용은 이야기하지 않는다. &lt;strong&gt;Koding.com 로그인은 가상 머신 접속&lt;/strong&gt;과 같다는 것을 기억하자.&lt;/p&gt;
+
+&lt;p&gt;지킬을 사용하기 위해서는 가상 머신에 지킬을 설치해야 한다. &lt;a href=&quot;/install-jekyll/#%EC%9A%94%EC%95%BD&quot;&gt;리눅스 데스크톱 환경에서 지킬 설치 요약&lt;/a&gt;과 똑같다. 서버이므로 오히려 과정이 줄어든다. 루비를 RVM으로 설치한다는 것을 꼭 기억하기 바란다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\c&lt;/span&gt;url -sSL https://get.rvm.io &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; bash -s stable
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.rvm/scripts/rvm
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rvm install ruby-2.2.0
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 명령 라인이면 더 이상 할 것이 없다. 텍스트 설명은 생략하며 다음의 영상을 참고하자. 지킬 사이트 생성, koding.com의 서비스에서 지킬 사용, 깃허브 푸쉬와 관련한 내용이 들어있다.&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/X96DYQkCcP8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Koding.com의 가상 머신에서 &lt;code&gt;sudo&lt;/code&gt; 패스워드는 입력하지 않아도 되며, RVM으로 루비 설치 후 &lt;code&gt;gem&lt;/code&gt; 패키지 설치도 마찬가지이다. 데스크톱 버전에서 설치했던 &lt;code&gt;nodejs&lt;/code&gt;는 설치하지 않아도 된다. 만약의 경우를 생각한다면 아래의 명령으로 설치하는 것도 좋다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sudo apt-get install nodejs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Koding.com은 지킬 사용을 위한 환경의 구성, 그리고 글쓰기에 이상적인 서비스로 생각할 수 있다. 그래도 &amp;#39;선택사항&amp;#39;이다.&lt;/p&gt;
+</description>
+</item>
+
+<item>
+<title>마크다운 엔진과 상관없이 문서에 자동으로 앵커 태그 링크 표현</title>
+<link>http://jekyllis.com/tip/adding-auto-anchor-links-to-content/</link>
+<pubDate>Fri, 23 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>tip</category>
+
+<guid isPermaLink="true">http://jekyllis.com/tip/adding-auto-anchor-links-to-content/</guid>
+<description>&lt;p&gt;지킬 공식 웹사이트는 문단 제목에 마우스를 올리면 링크 아이콘이 나타나며, 그 아이콘에 마우스를 올리면 문단 제목의 주소가 나타난다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jcdn.ossguide.net/jekyllis.com/anchor_jekyllrb.png&quot; alt=&quot;jekeyllrb.com&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Kramdown&lt;/h2&gt;
+
+&lt;p&gt;지킬 공식 웹사이트는 현재 마크다운 엔진으로 &lt;code&gt;kramdown&lt;/code&gt;을 사용 중인 것으로 보인다. 이 엔진을 사용하여 문서를 작성 후 사이트를 변환하면 자동으로 &lt;code&gt;id=문단 제목&lt;/code&gt; 형식으로 소스가 생성된다. 예를 들어, 문단 제목이 &lt;strong&gt;Jekyll is Awesome&lt;/strong&gt;, 문서 작성 시 &lt;code&gt;## Jekyll is Awesome&lt;/code&gt;으로 입력했다면 사이트 변환 후 &lt;code&gt;html&lt;/code&gt; 소스는 다음과 같이 생성된다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;h2&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;jekyll-is-awesome&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;마크다운 엔진으로 &lt;code&gt;kramdown&lt;/code&gt;만 사용해도 &lt;code&gt;#, ##, ...&lt;/code&gt;와 같은 문단 계층 구분으로 문서 작성 시 자동으로 문단의 &lt;code&gt;id&lt;/code&gt;가 부여되므로 하나의 페이지 내에 존재하는 고유주소가 된다. 사이트 내부 또는 외부에서 문서 참조로 활용할 수 있다. 하지만 역시 문제가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;한글과 같은 2byte 문자의 경우에 &lt;code&gt;id=section-N&lt;/code&gt; 형태로 표시&lt;/li&gt;
+&lt;li&gt;영어와 한글을 혼용해서 사용할 경우에 알고 싶지 않은 규칙의 다양한 형태로 나온다는 것&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;kramdown&lt;/code&gt; 엔진을 사용해야 한다는 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;(권유하고 싶지 않지만)&lt;/em&gt; 어쨌거나 &lt;code&gt;kramdown&lt;/code&gt; 엔진을 사용하면서 지킬 공식 사이트와 같이 제목에 마우스를 올렸을 때 링크 아이콘 노출과 아이콘 클릭으로 문단 주소를 웹브라우저의 주소란에서 쉽게 얻으려면 아래의 문서나 지킬 공식 웹사이트의 &lt;a href=&quot;https://github.com/jekyll/jekyll/tree/master/site&quot;&gt;저장소&lt;/a&gt;에서 소스를 참고하면 된다. &lt;strong&gt;괜한 고생을 할 수도 있다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#39;https://github.com/parkr&#39; class=&#39;user-mention&#39;&gt;@parkr&lt;/a&gt;&amp;#39;s &lt;a href=&quot;http://blog.parkermoore.de/2014/08/01/header-anchor-links-in-vanilla-javascript-for-github-pages-and-jekyll/&quot;&gt;Header Anchor Links in Vanilla JavaScript for GitHub Pages and Jekyll&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;마크다운 엔진과 상관없이 적용하기&lt;/h2&gt;
+
+&lt;p&gt;마크다운 엔진을 &lt;code&gt;kramdown&lt;/code&gt;만 사용해야 한다면 재미없다. 그리고 위의 방법은 귀찮은 방법이며 적용한 사이트 소스를 그대로 가져오지 않는 한 단번에 적용하기 어렵다. &lt;em&gt;(귀찮아서 그만뒀다)&lt;/em&gt; 이제 마크다운 엔진과 무관하게, 한글 차별없는 방법을 알아보자. 정말 간단하다.&lt;/p&gt;
+
+&lt;p&gt;우선 아래의 &lt;a href=&#39;https://github.com/bryanbraun&#39; class=&#39;user-mention&#39;&gt;@bryanbraun&lt;/a&gt; &lt;strong&gt;anchorjs&lt;/strong&gt; 깃허브 저장소로 가자.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/bryanbraun/anchorjs&quot;&gt;A tiny javscript utility for adding anchor links to existing page content&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;필요한 것은 2개의 파일 &lt;code&gt;anchor.min.js&lt;/code&gt;, &lt;code&gt;anchor.css&lt;/code&gt; 그리고 &lt;code&gt;index.html&lt;/code&gt; 소스 맨 아래의 일부 코드이다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;h2&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;addAnchors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;텍스트 설명은 하지 않는다. 아래의 영상으로 대신한다. 영상에서 사용한 테마는 지킬 1.5.1 까지의 &lt;a href=&quot;https://github.com/vjinn/theme151&quot;&gt;기본 테마&lt;/a&gt;이다.&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/Bo4tkLZAY8U&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;영상과 같이 스크립트 삽입 시 &lt;code&gt;_includes&lt;/code&gt; 디렉터리에 &lt;code&gt;anchor.html&lt;/code&gt; 파일로 만들어 템플릿에는 인클루드 태그를 사용하는 것이 좋다.&lt;/p&gt;
+
+&lt;p&gt;이 사이트의 저장소 &lt;a href=&quot;https://github.com/vjinn/vjinn.github.io&quot;&gt;소스&lt;/a&gt;를 참고하면 도움 되지 않을까 생각한다.&lt;/p&gt;
+</description>
+</item>
+
+<item>
+<title>VMware Player에 Linuxmint 17.1 Rebecca Cinnamon 설치하기</title>
+<link>http://jekyllis.com/environment/how-to-install-linuxmint-rebecca-cinnamon-on-vmware-player/</link>
+<pubDate>Thu, 22 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>environment</category>
+
+<guid isPermaLink="true">http://jekyllis.com/environment/how-to-install-linuxmint-rebecca-cinnamon-on-vmware-player/</guid>
+<description>&lt;p&gt;VMware Player에 리눅스 민트를 설치해 보자. 리눅스 민트는 우분투 못지 않게 인기있는 배포판이다. 지킬을 사용한다면 이 배포판을 선택하는 것도 좋다. 목적은 지킬 사용을 위한 환경 구성이지만, 리눅스 민트를 사용하기 위해서도 마찬가지로 설치하면 된다.&lt;/p&gt;
+
+&lt;p&gt;VMware에서 진행은 지난 글 &lt;a href=&quot;/environment/How-to-Install-Ubuntu-64-on-VMware-Player/&quot;&gt;VMware Player에 Ubuntu 설치하기&lt;/a&gt;를 참고하자. 이 페이지에서는 동영상으로 안내한다.&lt;/p&gt;
+
+&lt;p&gt;한가지 염두에 둘 것은 리눅스 민트는 현재 VMware Player가 지원하지 않으므로 여러 번 설치해야 할 수도 있고, 설치 후 VMware Tools을 별도로 설치해야 하는데 이 부분도 한번에 안될 경우가 있다.&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/uvDgwC6Qmio&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+</item>
+
+<item>
+<title>지킬 사용을 위한 최소한의 우분투 설정</title>
+<link>http://jekyllis.com/environment/setting-ubuntu-for-using-jekyll/</link>
+<pubDate>Sun, 04 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>environment</category>
+
+<guid isPermaLink="true">http://jekyllis.com/environment/setting-ubuntu-for-using-jekyll/</guid>
+<description>&lt;p&gt;지킬 사용을 위해 우분투를 설치했다면 최소한의 설정만 해보자. 이 페이지의 내용은 &lt;a href=&quot;/environment/How-to-Install-Ubuntu-64-on-VMware-Player/&quot;&gt;VMware Player에 Ubuntu 설치하기&lt;/a&gt; 포스트를 따라 했을 때 나오는 결과를 기준으로 한 것이다. 하지만 자신이 원하는 환경과 방향으로 우분투를 설치한 경우도 적용 가능하다는 것과 이 페이지에서 지킬 사용을 위해 설정하는 우분투 내 소프트웨어 또한 선택사항임을 기억하자.&lt;/p&gt;
+
+&lt;p&gt;한글 사용을 위한 설정만 텍스트로 안내하며, 나머지 부가 설정은 사용자의 취향이므로 동영상에 포함하여 안내한다. 부가적인 설정도 배경지식이 없는 사용자라면 지킬 사용을 위해 따라 하는 것을 권장한다. 이 페이지의 내용이 마음에 들지 않는다면 &lt;strong&gt;우분투 설치 후의 설정&lt;/strong&gt;에 대해 검색하여 적용해도 무방하다.&lt;/p&gt;
+
+&lt;p&gt;멋진 우분투 데스크톱 환경을 구성하는 일은 즐겁고, 관련 내용이 넘쳐나지만, 우분투 환경의 지킬에서 글쓰기보다 재미있는 일은 별로 없으니 나중에 그것도 적당히 구성하기 바란다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;지킬 사용을 위한 우분투 14.04 데스크톱 최소한의 설정&lt;/h2&gt;
+
+&lt;p&gt;다음의 내용을 실제로 해보면 3분 정도 걸리는 작업이다. 텍스트로 늘어 놓아 많은 일처럼 보인다. 부담없이 진행하자.&lt;/p&gt;
+
+&lt;h3&gt;키보드 입력 시스템 IBus를 사용하는 한/영 전환 설정&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;VMware Player 실행 및 우분투 부팅&lt;/li&gt;
+&lt;li&gt;키보드 &lt;code&gt;Super&lt;/code&gt; (윈도우 키) 누른 후 &lt;strong&gt;System Settings&lt;/strong&gt; 입력 후 선택&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Language Support&lt;/strong&gt; 클릭&lt;/li&gt;
+&lt;li&gt;팝업에서 &lt;strong&gt;Install&lt;/strong&gt; 클릭 및 사용자 암호 입력 순으로 진행&lt;/li&gt;
+&lt;li&gt;설치 완료 후 &lt;strong&gt;Install/Remove Languages&lt;/strong&gt; 클릭&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Korean&lt;/strong&gt; 선택, Apply Changes 클릭&lt;/li&gt;
+&lt;li&gt;로그아웃, 로그인&lt;/li&gt;
+&lt;li&gt;키보드 &lt;code&gt;Super&lt;/code&gt; (윈도우 키) 누른 후 &lt;strong&gt;System Settings&lt;/strong&gt; 입력 후 선택&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Text Entry&lt;/strong&gt; 클릭&lt;/li&gt;
+&lt;li&gt;Input sources to use 아래 &lt;strong&gt;+&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Korean (Hangul)&lt;/strong&gt; 선택 후 Add 버튼으로 추가&lt;/li&gt;
+&lt;li&gt;Input sources to use 항목 Korean (Hangul)의 선택&lt;/li&gt;
+&lt;li&gt;오른쪽 Switch to next source using 필드에 마우스 포커싱 (클릭)&lt;/li&gt;
+&lt;li&gt;키보드 &lt;code&gt;Shift + Space&lt;/code&gt; 누르기로 지정&lt;/li&gt;
+&lt;li&gt;Input sources to use 아래 &lt;strong&gt;+&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;English (US)&lt;/strong&gt; 선택 후 Add 버튼으로 추가&lt;/li&gt;
+&lt;li&gt;키보드 &lt;code&gt;Alt + F2&lt;/code&gt; 누른 후 키보드 &lt;code&gt;Shift + Space&lt;/code&gt;로 영어 입력 상태로 전환&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ibus-setup&lt;/strong&gt; 입력 후 실행&lt;/li&gt;
+&lt;li&gt;General 탭의 &lt;strong&gt;Show property panel&lt;/strong&gt;에서 &lt;strong&gt;Do not show&lt;/strong&gt; 선택&lt;/li&gt;
+&lt;li&gt;키보드 &lt;code&gt;Super&lt;/code&gt; (윈도우 키) 누른 후 입력란에 &amp;#39;gedit&amp;#39; (또는 &amp;#39;text editor&amp;#39;) 입력 후 선택 실행&lt;/li&gt;
+&lt;li&gt;임의의 텍스트 입력과 키보드 &lt;code&gt;Shift + Space&lt;/code&gt; 사용으로 한/영 전환 확인&lt;/li&gt;
+&lt;li&gt;활성화한 모든 창 종료 및 로그아웃, 로그인&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;위의 내용은 우분투에서 한글을 사용하고, 한/영 전환을 키보드 &lt;code&gt;Shift + Space&lt;/code&gt;를 사용한다는 설정이다. 윈도즈에 설치한 VMware Player에 우분투를 설치하여 사용할 때 한/영 전환을 보통의 키로 설정하는 방법은 직접 검색하기 바란다.&lt;/p&gt;
+
+&lt;p&gt;랩톱(노트북) 또는 데스크톱 사용에 따라 다를 수 있으며, 하드디스크의 파티션을 구분하여 우분투를 설치한 경우 등에 따라서도 다를 가능성이 있다.&lt;/p&gt;
+
+&lt;h3&gt;지킬 사용을 위한 기본 환경 설정&lt;/h3&gt;
+
+&lt;p&gt;다음의 동영상은 이 페이지의 전체 설정 내용이다. 위의 키보드 입력 시스템 설정과 지킬 사용에 필요한 아주 기초적인 설정을 안내하고 있다. 한 번 더 말하면 &amp;#39;지킬 사용을 위한 최소한의 설정&amp;#39;을 전제한다.&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/iDzgdx18MCk&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;우분투 14.10 까지 &amp;#39;gedit&amp;#39; + 한글 입력기 &amp;#39;nabi&amp;#39; 조합에서 귀찮은 버그가 있다. 한글 입력 모드가 되면 흔히 &amp;#39;버벅거림&amp;#39;, &amp;#39;멈춤&amp;#39; 현상이 지속해서 발생한다는 것을 참고하기 바란다. 만약 발생하지 않는다면 해결됐다고 생각하면 된다. 열반의 경지에 이르지 못한 사용자라면 피하기 바란다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;우분투 설치 후의 설정에 관한 참고 링크를 몇 가지 남긴다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://bagjunggyu.blogspot.kr/2014/04/ubuntu-1404-lts.html&quot;&gt;Ubuntu 14.04 LTS 내게 맞게 설정하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://egloos.zum.com/nemonein/v/5227053&quot;&gt;우분투 14.04, 한영 키로 한영 전환&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://egloos.zum.com/opensea/v/5814426&quot;&gt;우분투 14.04 LTS 설치 후 다듬기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://morningt.tistory.com/12&quot;&gt;Ubuntu 12.04 LTS - 한/영, 한자 키 설정&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
+
+<item>
+<title>VMware Player에 Ubuntu 설치하기</title>
+<link>http://jekyllis.com/environment/How-to-Install-Ubuntu-64-on-VMware-Player/</link>
+<pubDate>Sat, 03 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>environment</category>
+
+<guid isPermaLink="true">http://jekyllis.com/environment/How-to-Install-Ubuntu-64-on-VMware-Player/</guid>
+<description>&lt;p&gt;윈도즈에 설치한 VMware Player에 우분투를 설치해 보자. 설치의 목적은 지킬 사용을 위한 환경 구성이지만, 우분투를 경험하고 싶을 때도 같은 방법으로 설치하면 된다. 또 리눅스 배포판에 대부분 공통된 설치와 설정이다.&lt;/p&gt;
+
+&lt;p&gt;설치 흐름을 아래 텍스트로 간단히 나열해 본다. 동영상과 함께 참고하면 어려운 것은 하나도 없다. 이 글에서는 우분투 14.04 데스크톱 64비트 버전을 설치한다. 배경지식이 있다면 이 페이지를 빨리 떠나는 것이 좋다.&lt;/p&gt;
+
+&lt;h2&gt;윈도즈의 VMware Player에 우분투 설치하기&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ubuntu.com/download/desktop&quot;&gt;우부투 배포판 다운로드&lt;/a&gt; 및 저장 위치 확인&lt;/li&gt;
+&lt;li&gt;VMware Player 실행&lt;/li&gt;
+&lt;li&gt;Create New Virtual Machine 선택&lt;/li&gt;
+&lt;li&gt;Installer disc Image file (iso) 항목에 다운로드한 배포판 파일 추가&lt;/li&gt;
+&lt;li&gt;Personalize Linux
+
+&lt;ul&gt;
+&lt;li&gt;Full Name : 이름 입력&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;User Name : 아이디 입력 (사용자 계정, 로그인 ID)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Password : 암호 입력&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Virtual Machine Name : 영문으로 구분하기 쉬운 이름 입력 (예, Ubuntu 64Bit Desktop)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Location : 생성할 가상 운영체제 파일 저장 위치 선택&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Specify Disk Capacity
+
+&lt;ul&gt;
+&lt;li&gt;Maximum disk size : 기본 값 (원하는 크기 지정 가능)&lt;/li&gt;
+&lt;li&gt;Store virtual diks as a single file, Split virtual disk into multiple files : 하드디스크 파일 시스템이 NTFS일 경우 전자(Single), FAT32일 경우 후자(Multiple)를 선택한다고 일반적으로 알려져 있으나 어떤 것을 선택해도 무관&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;설치 시작 및 완료&lt;/li&gt;
+&lt;li&gt;Restart 또는 Shutdown&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;7번의 가상 파일 저장 위치를 호스트 운영체제&lt;em&gt;(여기서는 윈도즈)&lt;/em&gt;가 설치된 파티션이 아닌 별도의 파티션에 디렉터리(6번의 가상 머신 이름으로)를 만들어 저장하는 것을 권장한다. 생성한 가상 파일만 있으면 호스트 운영체제를 새롭게 설치해도 그대로 다시 사용할 수 있으며 데이터도 그대로 유지된다.&lt;/p&gt;
+
+&lt;p&gt;위의 내용과 동영상은 지킬 사용의 목적이 우선이므로 다른 설정을 안내하지 않았으나 설치가 끝난 후나 가상 머신을 사용하면서도 추가 설정이 가능하며 재시작 시 적용된다. 가상 머신에 적용할 CPU (코어 수), 메모리 크기는 직접 설정하기 바라며 아래의 동영상도 확인하면 도움이 된다.&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;
+&lt;iframe src=&quot;//www.youtube.com/embed/wKezpLoGFh4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+</item>
+
+<item>
+<title>Windows 환경에서 VMware Player 설치하기</title>
+<link>http://jekyllis.com/environment/How-to-Install-VMware-Player-7/</link>
+<pubDate>Fri, 02 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>environment</category>
+
+<guid isPermaLink="true">http://jekyllis.com/environment/How-to-Install-VMware-Player-7/</guid>
+<description>&lt;p&gt;윈도즈 운영체제에서 지킬을 사용하기 위해 리눅스를 설치할 때 하드디스크의 파티션을 나누기 어렵다면 VMware Player를 설치하여 원하는 리눅스 배포판을 설치하면 된다. 아주 단순한 내용이므로 배경지식이 있다면 페이지를 떠나기 바란다.&lt;/p&gt;
+
+&lt;p&gt;간단한 영상으로 전하며, 다운로드는 아래의 링크를 참고하면 된다. 링크의 버전은 7.0 이나 다른 최신 버전이 있다면 그것을 다운로드 받으면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/7_0&quot;&gt;VMware Player 다운로드 (VMware Player for Windows 64-bit)&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;video&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/6u57Ii6vsyY&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+</description>
+</item>
+
+<item>
+<title>Jekyll, 즐겁게 사용하기</title>
+<link>http://jekyllis.com/environment/enjoy-jekylling/</link>
+<pubDate>Thu, 01 Jan 2015 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>environment</category>
+
+<guid isPermaLink="true">http://jekyllis.com/environment/enjoy-jekylling/</guid>
+<description>&lt;p&gt;지킬뿐 아니라 대부분의 블로그, 웹사이트 도구를 사용할 때 사용의 목적을 잃지 않는 것이 우선이며 핵심이다. 도구를 통해 또 다른 가지의 수확을 얻을 가능성이 있지만, 사용이 전제되지 않으면 기대하지 않는 것이 좋다. 특히 웹 관련 도구를 사용할 때 개인 스타일에 맞도록 소위 디자인하거나 기능 추가, 도구 자체를 위한 프로그래밍 같은 기술 요소에 열정적인 우리의 일반적 특성을 볼 때 더욱 그렇다.&lt;/p&gt;
+
+&lt;p&gt;지킬이 놀라운 건 이런 열정을 소프트웨어 힘으로 사용의 목적에 좀 더 충실하도록 유도 또는 안내한다는 것이다. 지킬로 블로그나 웹사이트를 구성하기로 결정했다면 즉시 시작하고, 다음의 글이 도움이 될 수 있길 바란다. 엄청나게 주관적인 내용임을 명심하자.&lt;/p&gt;
+
+&lt;h2&gt;가능하다면, 그냥, 무조건, 리눅스 환경을 사용하기&lt;/h2&gt;
+
+&lt;p&gt;리눅스 환경에서만 지킬을 설치하고 사용할 수 있는 것이 아님은 모두 알고 있다. 또 로컬 PC가 아니라 &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;에서 직접 지킬 블로깅도 가능하며, 웹브라우저에서 사용할 수 있는 &lt;a href=&quot;https://koding.com/&quot;&gt;Koding&lt;/a&gt;의 가상서버환경에서도 가능하며 다른 방법이 더 있을 것이다.&lt;/p&gt;
+
+&lt;p&gt;맥, 윈도즈 환경에서도 지킬 설치와 사용이 어려운 것은 없다. 하지만, 지킬의 사용을 위해 진행하는 모든 과정들은 리눅스 환경에서 가장 유연하다. 발생하는 과정의 문제들도 적다. 물론 설치 후 포스팅만 꾸준하게 한다면 어떤 환경이든 크게 문제될 것은 없다. 핵심은 &lt;strong&gt;리눅스에서 사용할 때 가장 즐겁다.&lt;/strong&gt; 맥 환경도 좋지만, 우리나라에서는 환경 구성의 벽이 리눅스보다 높다.&lt;/p&gt;
+
+&lt;p&gt;하드디스크의 파티션을 나눠 리눅스 환경을 구성하는 것이 어렵다면 최소한 &lt;a href=&quot;http://vmware.com&quot;&gt;VMware Player&lt;/a&gt;와 같은 도구를 사용하여 가상의 환경을 구성하여 리눅스를 설치하면 된다. 윈도즈에서 VMware Player 설치, VMware Player에 리눅스를 설치하는 방법은 너무 간단하여 방법을 안내하는 것 조차 미안할 지경이다.&lt;/p&gt;
+
+&lt;h2&gt;투정은 그만하기&lt;/h2&gt;
+
+&lt;p&gt;새로운 서비스나 웹소프트웨어가 있다면 기존 유사 서비스나 도구와의 비교, 장단점 분석은 특정 경우가 아니면 하지 말자. 늘 사용하던 도구에 있는 특정 기능이 없어서 맞지 않다 보다 그것은 &amp;#39;이렇다&amp;#39;라고 생각하고 우선 써보자. 리눅스도 마찬가지이다. 익숙함과 어색함으로 윈도즈와 비교하는 것은 흥미없고, 이제는 식상하다. 오랜 시간 윈도즈를 사용하던 사람이 처음으로 맥 환경을 구비하여 경험할 때 리눅스에 비해 관대한 투정과 끝없는 인내의 열정을 가지는 것은 참 이상하다.&lt;/p&gt;
+
+&lt;h3&gt;터미널, 별거 없다.&lt;/h3&gt;
+
+&lt;p&gt;리눅스에서 지킬 사용만을 기준으로 볼 때 터미널을 실행하여 처리할 일은 몇가지 밖에 없고, 계속 반복하는 명령들 뿐이며 단순하다. 파일과 관련한 작업은 윈도즈와 마찬가지로 마우스를 이용하면 된다. 터미널을 사용해야 한다는 것에 거부감을 가지기 보다는 그냥 해보자. 가이드데로 따라 하기만 하면 된다. 하루만 경험하면 지킬 사용에 필요한 만큼은 충분히 익힐 수 있다.&lt;/p&gt;
+
+&lt;h3&gt;한국형과 이별하자&lt;/h3&gt;
+
+&lt;p&gt;워드프레스를 예로 들어 보자. 이슈가 되자 &amp;#39;한국형&amp;#39; 게시판, 쇼핑몰, 결제모듈을 외치는 사람들과 사이트 구석구석 세심한 웹사이트 스타일링에 충실하고 한국형 웹사이트 레이아웃을 고수하는 한국형 열정을 가진 한국형 인재들이 유독 많이 보였다. 콘텐츠 생산과 표현, 커뮤니티 등 핵심적이며 최고의 &amp;#39;사양&amp;#39;을 보유한 워드프레스도 한국형 앞에서는 힘을 못 쓰고 말았다.&lt;/p&gt;
+
+&lt;p&gt;한국형은 워드프레스를 CSS와 Html 연습 소프트웨어로 업그레이드시켰다. 또, 마트에서 테마를 고르는데 수 개월간 정신집중을 해야만 남이 볼 때 부끄럽지 않으면서 자기만족에 다다를 수 있다는 기발한 한국형 수련 방법을 만들어 유료테마 시장의 큰손으로 자리매김하는 데 힘을 실었다. 많은 정보와 기능이 쏟아져 나왔지만, 정작 사용(콘텐츠, 글쓰기)하는 사람은 찾기가 어렵다. 빈 사이트를 유료테마, 통계분석코드, SEO 최적화, 플러그인이 교대로 지키고 있는 모습은 너무 쉽게 찾을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;지킬에서 한국형과의 재회로 또다시 고생하지 말기 바란다. 이제는 헤어질 때다.&lt;/p&gt;
+
+&lt;h2&gt;선 설계&lt;/h2&gt;
+
+&lt;p&gt;지킬 뿐 아니라 대부분 비슷한데, 환경을 구성하고 주제가 정해지면 먼저 블로그나 사이트에 분류(Taxonomy)를 어떻게 구성할 것인가를 결정하는 것이 필요하다. 그것은 사이트 전역의 퍼머링크 정의에 관여하거나 개별 콘텐츠 등록 방향도 정할 수 있기 때문이다. 다른 것은 운영 중에 변경해도 대체로 문제가 없지만, 퍼머링크 구조를 변경하면 피곤하다.&lt;/p&gt;
+
+&lt;p&gt;분류는 &lt;code&gt;category&lt;/code&gt;, &lt;code&gt;tag&lt;/code&gt;, 디렉터리 그리고 사이트 전체 콘텐츠 유형 등 콘텐츠와 관련된 모든 구성의 설계와 같은 것이다. 단순히 &amp;#39;카테고리&amp;#39;를 말하는 것이 아니다. 페이지, 포스트도 콘텐츠 유형이자 분류이며, &amp;#39;포트폴리오&amp;#39;라는 콘텐츠 유형과 레이아웃을 만들고 선언하여 포스팅하면 그것도 분류다. 테마를 찾는 과정보다 &amp;#39;설계&amp;#39;의 시간이 최우선으로 필요하다. &lt;/p&gt;
+
+&lt;h2&gt;글쓰기에만 전념&lt;/h2&gt;
+
+&lt;p&gt;지킬에서 글쓰기 재미를 느끼지 못하면 당장 사용을 중지하는 것이 이득이다. 글이 없는 지킬 사이트는 마분지와 같다. 기본 메뉴얼, 자잘한 테크닉은 인터넷에 널려 있다. 필요할 때 찾아서 쓰는 것이지 미리 학습하는 것이 아니다. 소프트웨어의 정의나 특징 따위는 몰라도 된다. 사실 알 필요가 없다. 글쓰기에 도움을 주지 않는다. 사용의 목적을 기억하자.&lt;/p&gt;
+
+&lt;h3&gt;불필요한 기교는 아껴두자&lt;/h3&gt;
+
+&lt;p&gt;지킬 사용에서 반복하는 일과 조금 귀찮을 수 있는 (&lt;em&gt;실제는 하나도 귀찮지 않다.&lt;/em&gt;) 일이 몇 가지 정도가 있다. 터미널에서 사용하는 명령으로 지킬 관련한 것과 깃허브 푸쉬, 그리고 글쓰기(마크다운) 관련이다. 깃허브가 아니라 일반적인 웹호스팅이라면 &lt;a href=&quot;https://github.com/dmathieu/glynn&quot;&gt;Glynn&lt;/a&gt;을 이용하면 된다. 또 포스트 파일명을 입력하는 것이 있다. 이런 작업을 스크립트나 외부 프로그램의 도움으로 좀 더 편하게 처리하려는 경향이 있다. 하지만 한 번만 더 생각해보자.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;하루에 글 몇 개나 쓰시나&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;키보드의 위, 아래 방향키만 이용해도 충분히 즐겁고, 가장 중요한 글쓰기 &amp;#39;흐름&amp;#39;에 방해가 되는지 고려해야 한다.&lt;/p&gt;
+
+&lt;h3&gt;테마는 정말 대충, 적당히 고르자&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston-Werner&lt;/a&gt;의 블로그를 보자. 지킬 최고의 테마를 사용했으며, 가장 지킬스러운 사이트의 하나다. 지킬을 처음 경험한다면 이 테마로 시작하면 된다. 흠잡을 곳이 없다. 끝까지 사용해도 된다. 정말 간단한 구조고 볼 것이 없어 글쓰기에 즉시 매진하게 한다. 이 테마는 지킬 1.5.1 버전까지 기본 테마이다.&lt;/p&gt;
+
+&lt;p&gt;자고 일어나 사이트를 다시 볼 때 스타일시트 파일을 먼저 열게 되는 것을 경계하자. 테마를 찾고 취향에 맞게 수정하는 시간이 너무 길면 글 쓸 힘이 없어진다. 취향이 아니라 헤어져야 할 &amp;#39;한국형 습관&amp;#39;임을 잊지 말자.&lt;/p&gt;
+
+&lt;h3&gt;잘 보이게만 하자. 그것도 최소한으로&lt;/h3&gt;
+
+&lt;p&gt;사용자 경험같은 것은 지킬에 필요없다. 어울리지 않는다. 세세한 웹사이트 스타일링에 시간 낭비하지 않는 것은 기본이다. 하지만, 태그를 사용하여 포스트 내용을 계층별로 작성하는 것, 좀 더 편한 읽기 제공을 위한 글자 크기, 단락 간격 및 줄 간격 조정, 대·중·소 별 제목의 명확한 구분을 위한 배려의 스타일링은 필요하다. 하지만 이것도 적당히 하자.&lt;/p&gt;
+
+&lt;h3&gt;빌려 쓰고, 베껴 쓰며, 공유하기&lt;/h3&gt;
+
+&lt;p&gt;페이징, 아카이브, 이미지 캡션 기능이 필요한데 선택 또는 사용하는 테마에 없다면 검색으로 스니핏을 찾거나 플러그인을 찾으면 된다. 또 지킬로 구성한 사이트를 하나씩 접근하여 해당 기능이 있는 사이트의 소스에서 베껴 쓰면 된다. 그전에 먼저, 갑자기 그냥 그런 기능을 넣었으면 하는 충동이었을지 모르므로 정말 필요한가 한 번 더 생각하자. 지킬로 구성한 사이트를 찾는 것은 덤으로 얻을 수 있는 것이 있어서 좋은 점이 많다.&lt;/p&gt;
+
+&lt;p&gt;직접 가능하다고 해도 누가 만들어 놓은 것이 있다면 그냥 얻어 쓰는 것이 좋지 않을까. 부지런히 빌려 쓰고, 베껴 쓰는 습관이 필요하다. 글쓰기에 더 많은 시간을 투자하자. 빌려 쓰고, 베껴 쓰면서 구성한 자신의 사이트 소스도 공개하여 또 다른 사람이 빌리고 베껴 쓰도록 하자.&lt;/p&gt;
+
+&lt;h2&gt;꼭 블로그여야 하나&lt;/h2&gt;
+
+&lt;p&gt;&amp;#39;일상다반사&amp;#39;, &amp;#39;리뷰&amp;#39;는 많은 블로거가 채택하는 주제이다. 그런 주제로 지킬을 사용하는 것도 좋다. 포스트를 작성하고 각각의 카테고리를 지정하고 분류하여 표현하면 충분하다. 하지만 지킬을 사용하기로 했다면 방향을 다르게 설계해보는 것도 즐겁다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어, 일상다반사에 대한 포괄적인 블로깅보다 특정한 해의 월요일에만 사람들에게 일어나는 현상에 대한 내용을 포스팅하는 &amp;#39;월요일 다반사&amp;#39;라는 지킬 블로그를 개설하면 어떨까? 화요일, 수요일도 가능하다. 이럴 경우 1년간만 운영하는 개성있는 블로그가 될 수 있다. 제한된 기간을 가진 블로그이지만 그대로 내버려둬도 상관없다. 블로그는 &amp;#39;로그(log)&amp;#39;다.&lt;/p&gt;
+
+&lt;p&gt;또 특정 기기나 소프트웨어 등의 설명서 사이트를 지킬로 개설하는 것은 상당히 유리하며 유연하다. 이런 유형의 콘텐츠는 기기나 소프트웨어 등이 업데이트되면 내용이 변경되어야 한다. 지킬은 이런 콘텐츠 유형을 위해 소프트웨어적인 기능을 제공한다.&lt;/p&gt;
+
+&lt;p&gt;워드프로세서가 없다면 지킬을 사용하면 된다. 폴더를 만들어 관리하는 것도 좋지만, 지킬을 사용하여 문서를 작성하고 웹브라우저에서 열람하는 것도 멋진 방법이다. 지킬을 위해서 별도의 웹서버 구성이 필요하지 않다.&lt;/p&gt;
+
+&lt;p&gt;위의 방법론은 지킬이 아니라도 가능하지만, 사이트 생성, 복사, 설정 그리고 글쓰기가 유사 소프트웨어보다 간편하고 효율적이기 때문에 지킬에서 활용할 때 가장 유리하다. 구성의 부담이 가장 적기 때문이다. 원한다면 위의 방법론으로 개설한 모든 블로그를 하나의 사이트에 간단히 통합하는 것도 쉽게 할 수 있다. 단지 &amp;#39;복사&amp;#39;와 &amp;#39;붙여 넣기&amp;#39;다.&lt;/p&gt;
+
+&lt;h2&gt;지킬 스타일&lt;/h2&gt;
+
+&lt;p&gt;지킬스러운 것은 이런 게 아닐까 생각해 본다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;사이트가 소위 &amp;#39;허접&amp;#39;하다는 말이 나올 정도는 돼야 한다.&lt;/li&gt;
+&lt;li&gt;&amp;#39;뭔가 허전하다&amp;#39;는 말도 들을 수 있어야 한다.&lt;/li&gt;
+&lt;li&gt;포스트 수가 100개를 넘어도 한 페이지에 다 나와야 한다.&lt;/li&gt;
+&lt;li&gt;그럼 페이징도 필요 없다.&lt;/li&gt;
+&lt;li&gt;하지만 포스트 네비게이션이 필요하다.&lt;/li&gt;
+&lt;li&gt;아카이브가 필요한가!&lt;/li&gt;
+&lt;li&gt;분류(category)는 필요하지만 프런트 엔드에 표현하지 않는다.&lt;/li&gt;
+&lt;li&gt;태그(tag)를 사용해도 좋지만 프런트 엔드에 표현하지 않는다.&lt;/li&gt;
+&lt;li&gt;사이트 메뉴는 없어도 나쁘지 않다.&lt;/li&gt;
+&lt;li&gt;검색 기능은 없어도 된다.&lt;/li&gt;
+&lt;li&gt;이미지가 하나도 없어도 좋다.&lt;/li&gt;
+&lt;li&gt;맞춤법을 고민한다.&lt;/li&gt;
+&lt;li&gt;깃허브를 몰라도 링크나 아이콘 하나는 있어야 한다.&lt;/li&gt;
+&lt;li&gt;콘텐츠 내 모든 링크의 타겟은 &lt;code&gt;_self&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;사이트 소스는 당연한 듯 공유하며, 쉽게 찾을 수 있도록 링크로 제공한다.&lt;/li&gt;
+&lt;li&gt;따라서 누가 봐도 지킬 사이트임을 알 수 있다.&lt;/li&gt;
+&lt;li&gt;기계식 키보드를 갖고 싶다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+</item>
+
+<item>
+<title>Jekyll, 이해와 시작</title>
+<link>http://jekyllis.com/environment/start-jekyll/</link>
+<pubDate>Wed, 31 Dec 2014 00:00:00 +0900</pubDate>
+<dc:creator></dc:creator>
+
+
+<category>environment</category>
+
+<guid isPermaLink="true">http://jekyllis.com/environment/start-jekyll/</guid>
+<description>&lt;p&gt;&lt;strong&gt;Strange Case of Dr Jekyll and Mr Hyde&lt;/strong&gt;, 우리가 보통 &amp;#39;지킬 앤 하이드&amp;#39;로 알고 있는 소설이다. 지금 이 사이트에서 이야기하는 소프트웨어 &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;은 여기서 따온 이름이다.&lt;/p&gt;
+
+&lt;p&gt;단순, 블로그 지향, 정적 사이트 등의 지킬(Jekyll)에 대해 널리 알려진 정의는 공식 사이트를 통해 얻으면 된다. 더 깊은 이해는 필요없다. 공식 사이트의 한글 번역판도 있으니 전혀 문제가 없을 것이다. 사이트를 번역한 사람(&lt;a href=&#39;https://github.com/svperstarz&#39; class=&#39;user-mention&#39;&gt;@svperstarz&lt;/a&gt;)에게 감사의 마음과 함께 아래 지킬 시작에 필요한 몇 가지 링크를 남긴다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://jekyllrb.com&quot;&gt;지킬 공식 웹사이트&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jekyllrb-ko.github.io&quot;&gt;지킬 공식 웹사이트 한글 번역&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://tom.preston-werner.com&quot;&gt;Tom Preston-Werner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://byparker.com&quot;&gt;Parker Moore&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Jekyll is Awesome&lt;/h2&gt;
+
+&lt;p&gt;지킬은 아주 흥미로운 도구이다. 편의 기능과 미려한 사용 화면을 제공하지 않지만 가장 쉬운 블로깅 방법을 제공한다. PC 환경에서 흔히 존재하는 텍스트 에디터나 터미널에서 즉시 사용할 수 있는 에디터로 글을 쓰고 저장 후 간단한 명령어 한 번으로 사이트를 생성한다. 사이트 생성의 방향 설정도 또 하나의 글쓰기와 같다. 역시 간단한 실행 명령으로 원하는 서비스에 호스팅할 수도 있다.&lt;/p&gt;
+
+&lt;p&gt;지킬이 가장 놀라운 것은 이러한 소프트웨어 사용 방식의 특징이 결국 &lt;strong&gt;글 쓰는 힘으로 작용&lt;/strong&gt;한다는 것이다. 관리페이지(Back-end) 제공으로 사이트 전역 설정과 글쓰기 환경을 제공하는 방식은 사이트 관리를 위한 편의에 있어서 사용자에게 도움을 줄 수 있지만, 궁극의 목적인 글쓰기(콘텐츠)에 보이지 않는 부담을 줄 수 있다. 글 내용의 표현과 부가정보 등의 입력이 고맙게도 분리되어 있기 때문에 글 쓰는 흐름을 지속해서 이어가기 어렵다.&lt;/p&gt;
+
+&lt;p&gt;지킬을 소프트웨어적인 특징만을 보고 선택하는 것도 흥미로운 일이지만, 그 특징이 지금껏 다른 환경의 소프트웨어 사용에서 부족했던 글쓰기에 더욱 집중하게 해준다는 사실을 실제 맛보기 바란다.&lt;/p&gt;
+
+&lt;h2&gt;Jekylling&lt;/h2&gt;
+
+&lt;p&gt;관리페이지를 제공하는 소프트웨어 사용의 습관처럼 사이트 자체의 스타일링과 기능 추가를 위한 검색과 탐색에 처음부터 나서게 된다면 지킬을 진짜 사용할 것인가에 대한 결정을 빨리 내려야 한다.&lt;/p&gt;
+
+&lt;p&gt;지킬의 소프트웨어 특징은 글쓰기가 중심이 되지 않으면 특징이 되지 못한다. 그냥 단순히 리눅스에서 그것도 터미널에서 영문 타자 연습하는 것이나 다름없다. 비슷한 소프트웨어도 마찬가지지만 지킬은 특히 플러그인이나 테마의 의존도가 낮다. 개발자가 의도한 것인지 알 수 없지만, 낮은 의존도 때문에 글쓰기에 집중할 환경이 자연스럽게 만들어진다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html&quot;&gt;Blogging Like a Hacker&lt;/a&gt; - I already knew a lot about what I didn’t want. I was tired of complicated blogging engines like WordPress and Mephisto. I wanted to write great posts, not style a zillion template pages, moderate comments all day long, ...&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;지킬 사용의 환경 구성이 끝났다면 가장 먼저 글을 써야 한다. 글을 쓸 때 필요한 약간의 기술적 지식과 게시만 할 줄 안다면 지킬을 다 아는 것이다. 나머지 가지들은 정말 몰라도 된다. 테크닉만 가득한 사이트로 구성하지 않는 것이 좋다. 지킬 글쓰기에서만 가능한 키보드 손맛 한 번 경험하지 못할 가능성이 크기 때문이다.&lt;/p&gt;
+
+&lt;p&gt;지킬링(Jekylling)은 &amp;#39;&lt;strong&gt;글쓰기&lt;/strong&gt;&amp;#39;이지 플러그인, 테마, 스니핏, 테크닉이 아니다.&lt;/p&gt;
+
+&lt;h2&gt;Github, Collaboration, Open Source&lt;/h2&gt;
+
+&lt;p&gt;협업 시스템의 대명사로 볼 수 있는 &lt;a href=&quot;https://github.com&quot;&gt;깃허브&lt;/a&gt;와 지킬을 별개로 놓고 이야기하기가 어렵다. 물론 지킬을 사용하는 것 자체와 사이트를 호스팅하는 것은 사용자의 선택이며 깃허브와 상관없다. 그러나 지킬 사용자 대부분이 깃허브의 시스템을 이용하며, 깃허브에 관련 소스를 공개한다. 원하는 정보를 찾으려면 깃허브를 찾을 수밖에 없고, 이런 공유의 방식으로 지킬 사이트를 운영하고 콘텐츠를 축적하는 과정이 가장 즐겁다. 지킬은 이런 협업을 내포한 오픈 소스 소프트웨어이다.&lt;/p&gt;
+
+&lt;h2&gt;Post WordPress&lt;/h2&gt;
+
+&lt;p&gt;글쓰기만을 놓고 볼 때 워드프레스는 지킬 못지 않게 훌륭하다. 간단한 설정으로 지킬처럼 마크다운을 사용하여 글쓰기가 가능하며, 관리페이지가 아닌 곳에서 글을 쓸 방법도 많다. 사실 이런 부분은 지킬보다 더 많은 이점이 있다. 글쓰기 중심의 사용이 아니었거나 아름다운 테마와 기능에 매료되어 글쓰기가 부족했기 때문에 느끼지 못한 것이다. 그리고 워드프레스의 시작도 &amp;#39;글쓰기&amp;#39; 중심이었으며 지금도 마찬가지이다.&lt;/p&gt;
+
+&lt;p&gt;비슷한 유형의 소프트웨어도 조금씩 다른 점이 있으며 그것이 선택의 기준이 될 수 있다. 글쓰기 중심의 사용자에게 지킬은 현명한 선택이라는 생각이다. 위에서 말한데로 소프트웨어 사용 방식 자체가 글쓰기에 힘을 실어 주기 때문이다. 하지만 워드프레스의 좋은 글쓰기 환경을 이용하지 못하는 것과 같은 방식의 사용이라면 또 다른 선택이 필요할 것이다.&lt;/p&gt;
+
+&lt;p&gt;글쓰기에 목마른 블로거라면 지금 즉시 지킬을 설치하자.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;$ gem install jekyll&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+</item>
+
+</channel>
+</rss>

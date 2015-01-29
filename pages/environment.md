@@ -72,3 +72,11 @@ number: 2
  - [우리나라 지킬 사용자 사이트](/jekyll-site)
  - [Jekyll Themes](http://jekyllthemes.org)
  - [지킬 1.5.1 까지 기본 테마]({{ site.gl }}/vjinn/theme151)
+
+## 지킬 사이트 호스팅
+
+지킬 사이트를 호스팅(게시)하는 방법은 여러가지가 있다.
+
+### 일반적인 웹호스팅 서비스 사용하기
+
+ - [Glynn으로 일반 웹호스팅에 지킬 사이트 업로드 하기]({% post_url 2019-01-29-jekyll-site-web-hosting-using-glynn %}) 

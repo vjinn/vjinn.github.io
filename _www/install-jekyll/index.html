@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko-kr">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="naver-site-verification" content="9f31b38fb10b5fbb750caab37be28692a1540943"/>
+	<meta name="google-site-verification" content="28wWfcMLG0rw009bmEfnTWjYfCZHxPwB_EY-SzgDdnc" />
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta property="keywords" content="Jekyll, 지킬, 마크다운, markdown, kramdown, redcarpet, rdiscount, Github, Github pages, 깃허브, 깃허브 저장소, repository, gem install jekyll, jekyll 루비, ruby, liquid, pygments, GFM" />
+	
+  <title>
+    
+      운영체제별 지킬 설치와 사용 &middot; Install Jekyll
+    
+  </title>
+			
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+	<link rel="stylesheet" href="/public/css/anchor.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Install Jekyll" href="/feed.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>$ gem install jekyll</p>
+  </div>
+
+  <nav class="sidebar-nav">	
+
+    	
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">소개</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/environment/">준비</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item active" href="/install-jekyll/">설치</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/jekyll-basic/">기본</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/jekyll-site/">사이트</a>
+          
+        
+           
+      
+			<a class="sidebar-nav-item" href="https://github.com/vjinn/vjinn.github.io/issues" target="_blank">질문</a>
+			<a class="sidebar-nav-item" href="http://feeds.feedburner.com/installjekyll" target="_blank">RSS</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, hosted on <a href="https://github.com/vjinn/vjinn.github.io">Github Pages</a>. Theme inspired by <a href="https://github.com/poole/lanyon">lanyon</a>.</p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">Install Jekyll</a>
+            <small>Enjoy Jekylling!</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">운영체제별 지킬 설치와 사용</h1>
+  <p>사용 환경(운영체제)별 지킬 설치에 대해 알아보자. 우선 지킬 설치는 환경보다 지킬 버전에 따른 기준을 충족해야 한다. 새로운 지킬 버전이 있다면 공식 사이트에서 추가로 필요한 패키지가 무엇인지 확인하고 설치하면 된다는 것을 기억하자.</p>
+
+<p>아래의 링크(영, 한)를 가끔 찾아보자.</p>
+
+<ul>
+<li><a href="http://jekyllrb.com/docs/installation/">Installation</a></li>
+<li><a href="http://jekyllrb-ko.github.io/docs/installation/">설치</a></li>
+</ul>
+
+<h2>리눅스에서 지킬 설치</h2>
+
+<p>이 글에서 안내하는 리눅스에서의 지킬 설치는 지킬 <strong>1.x</strong>, <strong>2.x</strong>, <strong>3.x</strong> 버전 모두에 똑같이 적용된다. 가장 큰 기준은 지킬이 요구하는 루비(Ruby) 소프트웨어를 각 배포판의 패키지 관리자(<code>apt-get</code> 같은)로 설치하지 않고 <strong>RVM(Ruby Version Manager)</strong>으로 설치한다는 것이다. 맥이나 이 글에서 안내하지 않는 다른 리눅스 배포판도 거의 같다.</p>
+
+<p>배포판의 패키지 관리자로 설치하는 루비는 해당 배포판에 최적화되어 있다고 할 수 있다. 지킬의 새로운 버전이 배포판에 없는 루비 버전을 요구할 때 번거로운 과정을 진행해야 하는데 배경지식이 없을 때는 귀찮다. 복잡한 것은 아니지만 우리의 목적은 지킬을 사용하는 것이지 배포판의 특징이나 루비 소프트웨어를 학습하는 것이 아님을 잊지 말기 바란다. RVM을 통해 루비를 설치하면 지킬이 루비를 버리지 않는 한 버전업에 따른 환경 변경의 부담을 덜 수 있다.</p>
+
+<p>또 여러 버전의 루비를 설치하면 여러 버전의 지킬을 사용할 수 있다. 그러나 특정 경우가 아니면 지킬 최신 버전과 그 버전이 요구하는 루비 버전을 사용하기 바란다.</p>
+
+<h3>기준</h3>
+
+<p>다음은 이 글에서 안내하는 리눅스에서의 지킬 설치의 기준이다.</p>
+
+<ul>
+<li>루비는 반드시 RVM으로 설치</li>
+<li>싱글 유저 RVM 설치</li>
+<li>우분투 데스크톱(12.04 부터 14.10 까지), 리눅스 민트 데스크톱(17) 기준</li>
+<li>배포판 설치 후 업데이트는 하지 않음</li>
+<li>이미 패키지 관리자로 루비를 설치하고 지킬 사용하는 경우도 동일</li>
+<li>지킬 버전 1, 2, 3 모두 동일</li>
+</ul>
+
+<p>위에 없는 리눅스 배포판도 대부분 같다고 생각하면 된다. 바로 알아보자.</p>
+
+<h3>요약</h3>
+
+<p>먼저 이후에 안내하는 내용을 간단하게 요약하면 다음과 같다. 긴 설명이 싫다면 아래만 진행하면 된다.</p>
+
+<p>아래 명령 라인을 하나씩 입력하여 실행 및 진행 후 터미널 설정만 아래에 나오는 내용을 참고하여 변경하면 된다. 4번째 명령 라인에서 <code>vjinn</code>은 자신의 정보로 변경하면 된다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo apt-get install curl
+<span class="nv">$ </span>gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+<span class="nv">$ </span><span class="se">\c</span>url -sSL https://get.rvm.io <span class="p">|</span> bash -s stable
+<span class="nv">$ </span><span class="nb">source</span> /home/vjinn/.rvm/scripts/rvm
+<span class="nv">$ </span>rvm install ruby-2.2.0
+<span class="nv">$ </span>sudo apt-get install nodejs
+<span class="nv">$ </span>gem install jekyll
+</code></pre></div>
+<p>다음의 링크는 우분투와 리눅스 민트 데스크탑에서 지킬 설치 영상이다. 한 번 참고하면 된다.</p>
+
+<ul>
+<li><a href="http://youtu.be/lLLFAYoNHv4">How to Install Jekyll on Ubuntu and Linux Mint Desktop with RVM</a></li>
+</ul>
+
+<p>아래는 설명을 조금 더한 내용이다.</p>
+
+<h3>지킬이 요구하는 패키지 설치</h3>
+
+<p>터미널을 실행하고 아래의 명령을 그대로 입력하여 <code>curl</code>을 설치하자. RVM을 설치하기 위한 것이다. 설치 물음이 나오면 <strong>Y</strong>를 눌러 진행하면 된다. 이후의 과정도 같다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo apt-get install curl
+</code></pre></div>
+<p>다음의 두 명령 라인의 내용은 <a href="https://rvm.io/">RVM</a> 웹사이트에 접속하면 즉시 얻을 수 있다. 복사해서 사용하기 바란다. 이것만 하면 RVM 설치는 끝이다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+<span class="nv">$ </span><span class="se">\c</span>url -sSL https://get.rvm.io <span class="p">|</span> bash -s stable
+</code></pre></div>
+<p>다음 과정이 중요하다. 위의 명령으로 RVM 설치가 끝났다면 아래와 같은 메시지를 볼 수 있을 것이다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Installing RVM to /home/vjinn/.rvm/
+    Adding rvm PATH line to /home/vjinn/.profile /home/vjinn/.mkshrc /home/vjinn/.bashrc /home/vjinn/.zshrc.
+    Adding rvm loading line to /home/vjinn/.profile /home/vjinn/.bash_profile /home/vjinn/.zlogin.
+Installation of RVM in /home/vjinn/.rvm/ is almost <span class="nb">complete</span>:
+
+  * To start using RVM you need to run <span class="sb">`</span><span class="nb">source</span> /home/vjinn/.rvm/scripts/rvm<span class="sb">`</span>
+    in all your open shell windows, in rare cases you need to reopen all shell windows.
+</code></pre></div>
+<p>위의 내용은 <em>&#39;설치 잘 됐고요, 프로파일에 RVM 경로는 추가됐는데 RVM 사용하려면 터미널에 한 줄 명령을 넣어야 합니다.&#39;</em> 라는 것이다. 그 한 줄 내용은 다음과 같다. 입력 및 실행해도 되지만 하지 말자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">source</span> /home/vjinn/.rvm/scripts/rvm
+</code></pre></div>
+<p>위의 명령을 실행하면 터미널을 종료하기 전에는 루비 설치, 지킬 설치와 사용, 루비 버전 확인, 지킬 버전 확인 등 모든 것이 가능하지만, 터미널을 종료 후 재실행 하면 다시 입력해야 한다. 그렇지 않으면 아무것도 할 수가 없다.</p>
+
+<p>RVM 설치 시 분명 경로가 추가됐다는 메시지가 있고, 확인하면 추가되어 있는데 재실행하면 추가한 경로의 파일을 읽지 않는다. 영구적인 방법은 터미널 설정을 변경하는 것이다. 이 글의 기준인 우분투와 리눅스 민트 데스크톱의 터미널 소프트웨어는 그놈 터미널(GNOME Terminal)이다. 이 소프트웨어의 설정을 변경해야 한다.</p>
+
+<p>다음과 같이 터미널 설정을 변경하고 재실행하자. (설정에 따라 메뉴가 데스크톱 화면 상단에 나올 수 있다.)</p>
+
+<ol>
+<li>터미널의 메뉴에서 <code>Edit - Profile Preferences - Title and Command 탭 - Run command as a login shell</code> 선택</li>
+<li>터미널 종료 후 재실행</li>
+</ol>
+
+<p><img src="http://jcdn.ossguide.net/jekyllis.com/gtset.gif" alt="그놈 터미널 설정"></p>
+
+<p>설치 후 나오는 메시지를 실행하여 루비, 지킬을 설치하고 위의 터미널 설정을 변경해도 전혀 문제가 없다.</p>
+
+<p>이제 루비를 설치하고 지킬을 설치하자. 루비는 글 작성일 기준 2.2.0 버전이 최신 안정 버전이며, 지킬 3.x 버전부터 루비 1.9.3 버전을 지원하지 않으며, 2.0과 2.2를 지원한다. 여기서는 2.2.0 버전을 설치한다.</p>
+
+<p>다음의 명령을 실행하자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>rvm install ruby-2.2.0
+</code></pre></div>
+<p>설치 후 루비 버전을 확인하자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>ruby -v
+ruby 2.2.0p0 <span class="o">(</span>2014-12-25 revision 49005<span class="o">)</span> <span class="o">[</span>x86_64-linux<span class="o">]</span>
+</code></pre></div>
+<p>다음으로 지킬 버전 2.x 부터 필요한 <code>nodejs</code>를 설치하자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo apt-get install nodejs
+</code></pre></div>
+<h3>지킬 설치 및 확인</h3>
+
+<p>바로 지킬을 설치하자. 지킬은 <code>gem</code> 패키지로 배포하는데 리눅스 배포판의 패키지 관리자로 루비를 설치하지 않았고, 싱글 모드로 RVM을 설치했으므로 <code>sudo</code>는 사용하지 않아도 된다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install jekyll
+</code></pre></div>
+<p><em>빠른 설치를 위해 아래와 같이 옵션을 주는 경우가 있다. 문서는 설치하지 않겠다는 것이다.</em></p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install jekyll --no-rdoc --no-ri
+</code></pre></div>
+<p>설치가 끝나면 지킬 버전을 확인해 보자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll -v
+</code></pre></div>
+<h3>사이트 생성, 변환 테스트</h3>
+
+<p>아래의 명령으로 사이트를 생성하자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>jekyll new mysite
+</code></pre></div>
+<p>아래의 명령으로 생성한 사이트로 접근하고 사이트 변환하자. <code>jekyll serve</code> 명령 후 터미널에 나오는 <strong>Server address: <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a></strong>에서 아이피 부분을 <code>Ctrl +</code> 클릭하여 웹브라우저에서 사이트를 확인하자. 문제가 없다면 리눅스에서 지킬 설치는 끝이다. 너무 간단하다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>mysite
+<span class="nv">$ </span>jekyll serve
+</code></pre></div>
+<p><em>localhost:4000과 127.0.0.1:4000에서 후자로 사이트를 확인하는 것이 유리할 때가 많다. 가령 코멘트 시스템 **Livefyre</em><em>를 사용하기 위해 코드를 삽입하고 웹브라우저에 확인할 때 나오지 않는 경우는 전자의 경우이다.</em></p>
+
+<p>리눅스 배포판의 패키지 관리자로 설치한 루비가 있다면 삭제하는 것이 좋다. 안해도 문제는 없다. 다음과 같이 하자.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>sudo apt-get remove --purge ruby
+</code></pre></div>
+<p>지킬 버전 1.x에서 루비 2.x 버전을 사용하면 에러 메시지가 계속 나올 수 있다. 사용 시 발생하는 문제는 거의 없다. 거슬린다면 RVM으로 루비 1.9.3을 설치하고, 루비 사용 버전을 변경, 지킬 1.x 재설치<em>(설치라기 보다 변경한 루비 버전에 이 버전의 지킬을 사용하겠다는 정의로 생각하면 된다.)</em> 하면 된다. 하지만 1.x 버전의 지킬은 그만 쓰자.</p>
+
+<p>반드시 RVM을 통한 루비와 지킬 설치로 지킬 버전업에 따라 변경되는 환경 구성의 부담을 덜기 바란다.  </p>
+
+<h3>지킬 특정 버전 설치, 삭제, 업데이트</h3>
+
+<p>지킬 <strong>특정 버전을 사용</strong>하고 싶다면 아래와 같은 옵션을 주면 된다. (예, 1.5.1)</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install jekyll -v 1.5.1
+</code></pre></div>
+<p><strong>지킬 삭제</strong>는 아래와 같다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem uninstall jekyll
+</code></pre></div>
+<p><strong>특정 버전 삭제</strong>는 아래와 같다. (예, 1.5.1)</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem uninstall jekyll -v 1.5.1
+</code></pre></div>
+<p>다양한 지킬 버전이 설치되어 있을 때 <strong>최신 버전 제외 모두 삭제</strong>는 아래와 같다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem cleanup jekyll
+</code></pre></div>
+<p><strong>지킬 버전 업데이트</strong>는 아래와 같다. <code>gem update</code>를 사용하는 것이 좋다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem update
+or
+<span class="nv">$ </span>gem update jekyll
+</code></pre></div>
+<p><strong>설치한 지킬 또는 <code>gem</code> 패키지 목록</strong>은 다음의 명령으로 확인할 수 있다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem list
+or
+<span class="nv">$ </span>gem list jekyll
+</code></pre></div>
+<p>위의 내용들은 아래의 명령을 통해 도움을 얻을 수 있다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem <span class="nb">help</span>
+</code></pre></div>
+<p>지킬 버전을 한 눈에 보고 싶다면 아래 링크를 보자.</p>
+
+<ul>
+<li><a href="https://rubygems.org/gems/jekyll/versions">All versions of jekyll</a></li>
+</ul>
+
+<hr>
+
+<h2>윈도즈에 지킬 설치와 사이트 생성</h2>
+
+<p>윈도즈에서 사용할 수 있는 지킬은 공식적으로 없다. 지킬 사용자가 윈도즈에서 사용할 수 있도록 만들어 놓은 것 (패키지) 또는 방법을 안내한 것만 있다. 아래의 지킬 공식 웹사이트와 번역 사이트 링크의 내용에 참조할 문서의 링크가 있다.  </p>
+
+<ul>
+<li><a href="http://jekyllrb.com/docs/windows/#installation">Jekyll on Windows</a></li>
+<li><a href="http://jekyllrb-ko.github.io/docs/windows/#installation">윈도즈에서 지킬 사용하기 안내</a></li>
+</ul>
+
+<p>이 페이지에서는 <a href='https://github.com/madhur' class='user-mention'>@madhur</a>의 <strong>Portable Jekyll</strong> 패키지를 사용하여 안내한다. 이 패키지를 사용한다면 만든 사람에게 감사의 표시(Star)도 하자.</p>
+
+<h3>Portable Jekyll</h3>
+
+<p>한 번 더 이야기하면 윈도즈를 위한 지킬은 없으며, 특정 사용자가 패키지로 만든 것을 지금 설명하는 것임을 기억하자. 아래의 내용은 그 패키지 사용 설명이다.</p>
+
+<ol>
+<li><a href="https://github.com/madhur/PortableJekyll">다운로드</a> : 왼쪽 &#39;다운로드&#39;를 클릭하여 깃허브 페이지에 접속하면 오른쪽의 <strong>Download ZIP</strong> 버튼을 클릭하고, 운영체제와 다른 파티션에 이 파일을 저장(권장 사항)한 후 압축을 푼다. <em>(이것으로 설치는 끝이다.)</em></li>
+<li>윈도즈 커맨드(이하 CMD)를 실행한다.</li>
+<li>압축해제 디렉터리에서 <strong>setpath.cmd</strong> 파일을 윈도즈 커맨더 화면으로 드래그 후 실행한다. <em>(기억하자. 윈도즈에서 지킬을 사용할 때 제일 먼저 할 일이 이것이다.)</em></li>
+<li>CMD에 <code>jekyll -v</code>를 입력하여 버전을 확인해 보자.</li>
+<li>CMD 유틸을 종료하면 패키지를 종료하는 것과 같다. 그러므로 지킬도 안된다.</li>
+<li>지킬을 다시 사용할 때는 2,3번 과정을 진행한다.</li>
+</ol>
+
+<p>이 패키지에는 루비 2.x 버전이 포함되어 있어 <strong>지킬 버전 3.x 사용이 가능</strong>하며, 업데이트가 가능하다. 위의 2, 3번을 시행한 후 CMD에 <code>gem update</code>만 입력하면 된다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; gem update
+</code></pre></div>
+<p>문제가 없다면 지킬과 의존 패키지들이 모두 업데이트되었을 것이다.</p>
+
+<p>윈도즈에서 지킬을 사용할 때의 큰 이슈는 문서의 인코딩 문제이다. 그러나 1.x 버전에서 이 패키지를 사용했을 때는 문제가 있어 별도 정의를 하여 처리했으나, 글 작성일 기준으로 이 패키지 사용에 인코딩 문제는 없었다. 이유는 궁금해하지 말자. 문제가 발생하면 방법을 찾으면 된다. 어쨌든 즐거운 일이다.</p>
+
+<p>윈도즈의 지킬이라고 하지만 지킬 사용의 기본 방식은 리눅스에서와 같다. <code>jekyll serve</code>, <code>jekyll new</code> 명령도 같다. 윈도즈 CMD 명령이 조금 다르지만 신경 쓸 일은 아니다. 윈도즈 시스템 사용이 어색한 사람은 없으므로 CMD에서 꼭 필요한 명령 외 사이트 디렉터리 생성, 포스팅, 설정, 편집 등은 GUI 환경에서 진행하면 된다. 윈도즈에서의 지킬 사용이 가장 친근할 수 있다.</p>
+
+<p>다음의 동영상은 이 페이지 내용의 일부이다. 참고하기 바란다.</p>
+
+<div class="video">
+<iframe src="//www.youtube.com/embed/T_ZhqkshtKk" frameborder="0" allowfullscreen></iframe>
+</div>
+
+</div>
+
+ <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'installjekyll'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'installjekyll'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+
+
+      </div>
+			<div class="gbtn-wrap">
+        <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn">Follow @vjinn</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io" data-icon="octicon-star">Star</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io" data-icon="octicon-eye">Watch</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io/issues" data-icon="octicon-issue-opened">Issue</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io" data-icon="octicon-git-branch">Fork</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io/archive/master.zip" data-icon="octicon-cloud-download">Download</a>
+
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+      </div>
+
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+		<script>
+/*!
+ * AnchorJS - v0.1.0 - 2014-08-17
+ * https://github.com/bryanbraun/anchorjs
+ * Copyright (c) 2014 Bryan Braun; Licensed MIT
+ */
+
+function addAnchors(t){"use strict";if(t){if("string"!=typeof t)throw new Error("AnchorJS accepts only strings; you used a "+typeof t)}else t="h1, h2, h3, h4, h5, h6";for(var e=document.querySelectorAll(t),r=0;r<e.length;r++){var n;if(e[r].hasAttribute("id"))n=e[r].getAttribute("id");else{var s=document.body.textContent?"textContent":"innerText",o=e[r][s],a=o.replace(/\s+/g,"-").toLowerCase();e[r].setAttribute("id",a),n=a}var i='<a class="anchorjs-link" href="#'+n+'"><span class="anchorjs-icon"></span></a>';e[r].innerHTML+=i}}
+</script>
+
+<script>
+    var selector = '.post h2, .post h3, .post h4, .page h2, .page h3, .page h4';
+    addAnchors(selector);
+</script>
+
+		<!-- 구글 분석 스크립트 -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58958751-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- 네이버 분석 스크립트 -->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "d5ab09affbfe98";
+wcs_do();
+</script>
+
+  </body>
+</html>

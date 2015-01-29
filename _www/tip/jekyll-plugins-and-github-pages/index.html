@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko-kr">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="naver-site-verification" content="9f31b38fb10b5fbb750caab37be28692a1540943"/>
+	<meta name="google-site-verification" content="28wWfcMLG0rw009bmEfnTWjYfCZHxPwB_EY-SzgDdnc" />
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta property="keywords" content="Jekyll, 지킬, 마크다운, markdown, kramdown, redcarpet, rdiscount, Github, Github pages, 깃허브, 깃허브 저장소, repository, gem install jekyll, jekyll 루비, ruby, liquid, pygments, GFM" />
+	
+  <title>
+    
+      지킬 플러그인과 깃허브 페이지 플러그인 &middot; Install Jekyll
+    
+  </title>
+			
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+	<link rel="stylesheet" href="/public/css/anchor.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="Install Jekyll" href="/feed.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>$ gem install jekyll</p>
+  </div>
+
+  <nav class="sidebar-nav">	
+
+    	
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">소개</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/environment/">준비</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/install-jekyll/">설치</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/jekyll-basic/">기본</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/jekyll-site/">사이트</a>
+          
+        
+           
+      
+			<a class="sidebar-nav-item" href="https://github.com/vjinn/vjinn.github.io/issues" target="_blank">질문</a>
+			<a class="sidebar-nav-item" href="http://feeds.feedburner.com/installjekyll" target="_blank">RSS</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, hosted on <a href="https://github.com/vjinn/vjinn.github.io">Github Pages</a>. Theme inspired by <a href="https://github.com/poole/lanyon">lanyon</a>.</p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="masthead-title">
+            <a href="/" title="Home">Install Jekyll</a>
+            <small>Enjoy Jekylling!</small>
+          </h1>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">지킬 플러그인과 깃허브 페이지 플러그인</h1>
+  <span class="post-date">28 Jan 2015</span>
+  <p>간단하며 기본적인 지킬 플러그인이 몇가지 있는데 다음과 같다.</p>
+
+<ul>
+<li><a href="https://github.com/jekyll/jemoji">Jemoji</a> : 지킬 사이트 변환 시 그래픽 이모티콘 표현</li>
+<li><a href="https://github.com/jekyll/jekyll-mentions">Jekyll-mentions</a> : <code>@</code>+<code>username</code> 사용만으로 깃허브 계정 링크로 자동 변환</li>
+<li><a href="https://github.com/jekyll/jekyll-redirect-from">Jekyll-redirect-from</a> : 포스트나 페이지 접근 시 특정 URL로 리디렉트</li>
+<li><a href="https://github.com/jekyll/jekyll-sitemap">Jekyll-sitemap</a> : 지킬 사이트의 사이트맵 생성 (로컬에서는 사이트 변환 시)</li>
+</ul>
+
+<p>위의 4가지 플러그인은 로컬에서 다음과 같이 설치할 수 있다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gem install jemoji
+<span class="nv">$ </span>gem install jekyll-mentions
+<span class="nv">$ </span>gem install jekyll-redirect-from
+<span class="nv">$ </span>gem install jekyll-sitemap
+</code></pre></div>
+<p>설치 후 4가지 플러그인 모두 <code>_config.yml</code> 파일에 다음과 같이 추가만 하면 된다. 물론 사용을 원하는 플러그인만 입력한다.</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">gems</span><span class="p-Indicator">:</span>
+ <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">jekyll-mentions</span>
+ <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">jemoji</span>
+ <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">jekyll-redirect-from</span>
+ <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">jekyll-sitemap</span>
+</code></pre></div>
+<h2>Jemoji</h2>
+
+<p>설치와 설정 파일 추가 후 글쓰기에 원하는 이미티콘 텍스트를 입력하면 되고, 이모티콘 시트는 아래의 2개의 링크에서 참고 하자.</p>
+
+<ul>
+<li><a href="http://emoji.muan.co/">Emoji searcher</a></li>
+<li><a href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet</a></li>
+</ul>
+
+<p>아래 예제에서 진한 부분의 텍스트처럼 입력하면 된다.</p>
+
+<ul>
+<li>지킬 플러그인 <code>jemoji</code>는 정말 최고입니다. <strong>:+1:</strong></li>
+<li>오늘은 지킬 씨의 100번 째 <strong>:100:</strong> 생일입니다.</li>
+</ul>
+
+<p>별개로 <a href="https://github.com/github/gemoji">Gemoji</a>라는 것도 있는데, 깃허브 시스템(사이트)에서 사용할 수 있으며, 터미널에서 깃허브로 사이트를 푸쉬할 때 커밋 메시지에 넣을 수도 있다.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit -m <span class="s2">&quot;아침엔 :apple:&quot;</span>
+</code></pre></div>
+<h2>Jekyll-mentions</h2>
+
+<p>글쓰기에 깃허브 사용자의 소스를 참고하여, 글 내용에 해당 사용자의 깃허브 페이지를 링크할 때 아주 유용하다. 트위터 맨션처럼 생각하면 된다. 하지만 맨션에 대한 알림은 안된다. 다음과 같이 단순하게 입력하면 된다.</p>
+
+<ul>
+<li>이 사이트는 <a href='https://github.com/jekyll' class='user-mention'>@jekyll</a>로 구성했다. (o)</li>
+<li>지킬 저장소는 @jekyll/jekyll이다. (x)</li>
+</ul>
+
+<p>기본 값이 깃허브 URL이지만 원하는 정보로 변경할 수 있다. <code>_config.yml</code>에 정의하면 된다. 아래의 <code>base_url</code>의 값을 원하는 값으로 입력하면 된다.</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">jekyll-mentions</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">base_url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">https://twitter.com</span>
+</code></pre></div>
+<h2>Jekyll-sitemap</h2>
+
+<p>로컬에서 사이트를 변환하면 <code>_site</code>에 <code>sitemap.xml</code> 파일을 생성한다. 설치와 설정만 하는 것으로 끝이다. 처음 설치했다면 <code>_site</code> 디렉터리를 확인하여 사이트맵 파일이 생성되는지 한 번만 확인하자.</p>
+
+<h2>Jekyll-redirect-from</h2>
+
+<p>예를 들어, 이전에 작성한 <code>aaa.md</code> 포스트가 있고 실제 포스트 주소를 <code>/aaa/</code>라고 하자. <code>bbb.md</code> 포스트를 작성하면서 프런트 메터(front-matter)에 다음과 같은 옵션을 추가했다고 가정하자.</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">redirect_from</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/aaa/</span>
+</code></pre></div>
+<p>사이트 변환 후 실제 웹사이트에서 /aaa/ 포스트로 접근하면 /bbb/ 포스트로 리디렉트한다. <code>_site</code> 디렉터리에서 <code>/aaa/index.html</code> 파일을 열면 다음과 같은 내용으로 변경되어 있을 것이다. 사이트 소스 디렉터리의 <code>aaa.md</code> 파일의 내용은 변하지 않으므로 걱정하지 않아도 된다.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">utf-8</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Redirecting...<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">canonical</span> <span class="na">href=</span><span class="s">&quot;/bbb/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">refresh</span> <span class="na">content=</span><span class="s">&quot;0; url=/bbb/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Redirecting...<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/bbb/&quot;</span><span class="nt">&gt;</span>Click here if you are not redirected.<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;script&gt;</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;/bbb/&#39;</span><span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<p>여러 포스트를 리디렉트할 수 있다. 위의 설정 예에서 /aaa/ 밑으로 원하는 포스트 URL을 입력하면 된다.</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">redirect_from</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/aaa/</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/ccc/</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">/ddd/</span>
+</code></pre></div>
+<p>주의할 것은 <strong>&#39;/&#39;</strong>와 <strong>사이트 변환 시 생성되는 포스트 URL</strong>을 입력해야 한다는 것이다. 직접 테스트하면 금방 알 수 있다.</p>
+
+<h2>Github Pages</h2>
+
+<p>위의 4가지 플러그인은 깃허브에 호스팅을 한다면 로컬에 설치하지 않아도 된다. 설정 파일에 추가하는 것만 진행 후 깃허브에 푸쉬하면 된다. <strong>깃허브 페이지</strong>가 이 플러그인을 지원하기 때문이다. 패키지 버전이 다를 수 있지만, 위의 플러그인들은 문제가 거의 없을 것이다.</p>
+
+<ul>
+<li><a href="https://help.github.com/articles/using-jekyll-plugins-with-github-pages/">Using Jekyll Plugins with GitHub Pages</a></li>
+</ul>
+
+<p>플러그인을 설치하지 않고 설정에만 추가했는데 사이트 변환 명령을 실행하면 에러 메시지가 나올 것이다. 설정은 있는데 플러그인이 설치되지 않아서 나오는 메시지이므로 걱정할 것 없다. 하지만 사용하는 플러그인이라면 로컬에서도 설치하는 것이 좋다.</p>
+
+<p>깃허브가 아니라면 플러그인을 설치, 설정하여 사이트 변환 후 <code>_site</code>의 파일을 내보내면 된다.</p>
+
+</div>
+
+<div class="post-nav">	
+	
+	<span class="post-nav-item"><small>이전</small><a href="/tip/install-jekyll-and-using-on-koding-com/">Koding.com 서비스로 운영체제 상관없이 지킬 설치하고 사용</a></span>
+	
+	
+	<span class="post-nav-item"><small>다음</small><a href="/tip/jekyll-site-web-hosting-using-glynn/">Glynn으로 일반 웹호스팅에 지킬 사이트 업로드 하기</a></span>
+	
+</div>
+
+
+ <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'installjekyll'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'installjekyll'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/tip/jekyll-site-web-hosting-using-glynn/">
+            Glynn으로 일반 웹호스팅에 지킬 사이트 업로드 하기
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tip/install-jekyll-and-using-on-koding-com/">
+            Koding.com 서비스로 운영체제 상관없이 지킬 설치하고 사용
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/tip/adding-auto-anchor-links-to-content/">
+            마크다운 엔진과 상관없이 문서에 자동으로 앵커 태그 링크 표현
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+			<div class="gbtn-wrap">
+        <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn">Follow @vjinn</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io" data-icon="octicon-star">Star</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io" data-icon="octicon-eye">Watch</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io/issues" data-icon="octicon-issue-opened">Issue</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io" data-icon="octicon-git-branch">Fork</a>
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/vjinn/vjinn.github.io/archive/master.zip" data-icon="octicon-cloud-download">Download</a>
+
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+      </div>
+
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+		<script>
+/*!
+ * AnchorJS - v0.1.0 - 2014-08-17
+ * https://github.com/bryanbraun/anchorjs
+ * Copyright (c) 2014 Bryan Braun; Licensed MIT
+ */
+
+function addAnchors(t){"use strict";if(t){if("string"!=typeof t)throw new Error("AnchorJS accepts only strings; you used a "+typeof t)}else t="h1, h2, h3, h4, h5, h6";for(var e=document.querySelectorAll(t),r=0;r<e.length;r++){var n;if(e[r].hasAttribute("id"))n=e[r].getAttribute("id");else{var s=document.body.textContent?"textContent":"innerText",o=e[r][s],a=o.replace(/\s+/g,"-").toLowerCase();e[r].setAttribute("id",a),n=a}var i='<a class="anchorjs-link" href="#'+n+'"><span class="anchorjs-icon"></span></a>';e[r].innerHTML+=i}}
+</script>
+
+<script>
+    var selector = '.post h2, .post h3, .post h4, .page h2, .page h3, .page h4';
+    addAnchors(selector);
+</script>
+
+		<!-- 구글 분석 스크립트 -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58958751-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- 네이버 분석 스크립트 -->
+<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "d5ab09affbfe98";
+wcs_do();
+</script>
+
+  </body>
+</html>
