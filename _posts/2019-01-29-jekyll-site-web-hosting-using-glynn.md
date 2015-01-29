@@ -42,7 +42,7 @@ ftp_password: '1234'
 ```
 Port, Username, Password 정보는 설정에 추가하지 않아도 된다. 기본 포트를 사용하지 않는다면 추가하면 되고, Username, Password는 설정 파일에 없으면 실행 시 묻는다. 그 때 입력하면 된다.
 
-실행은 간단하게 다음과 같다.
+실행은 터미널에서 간단하게 다음과 같다.
 
 ```bash
 $ glynn
