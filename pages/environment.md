@@ -79,4 +79,4 @@ number: 2
 
 ### 일반적인 웹호스팅 서비스 사용하기
 
- - [Glynn으로 일반 웹호스팅에 지킬 사이트 업로드 하기]({% post_url 2019-01-29-jekyll-site-web-hosting-using-glynn %}) 
+ - [Glynn으로 일반 웹호스팅에 지킬 사이트 업로드 하기]({% post_url 2015-01-29-jekyll-site-web-hosting-using-glynn %}) 
