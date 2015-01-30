@@ -244,9 +244,7 @@ $ gem install jekyll
 
 다음의 동영상과 같이 보면 감 온다.
 
-<div class="video">
-<iframe width="420" height="315" src="https://www.youtube.com/embed/2j1Xt-azKss" frameborder="0" allowfullscreen></iframe>
-</div>
+[How to Install Jekyll OS X Yosemite with RVM (Without Xcode)](http://youtu.be/2j1Xt-azKss)
 
 위의 동영상은 테스트를 위해 전체 과정을 진행한 후에 리셋한 것이므로 나오지 않는데, 운영체제 처음 설치 후 RVM을 설치한다면 **경로 설정에 대한 물음**이 있을 수 있다. 주의하여 읽은 후 **'yes'** 입력 후 진행하면 된다. 또 **Homebrew** 관련한 내용도 설치 과정에서 나오는데, 지킬 사용이 목적이라면 세심하게 확인할 필요는 없다고 생각한다. RVM을 사용하면 된다.
 
