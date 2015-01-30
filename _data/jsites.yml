@@ -67,3 +67,8 @@
   link: http://rangken.github.io
   source: rangken/rangken.github.com
   desc: Study Node.js Effective-Java
+
+- name: 일모리와 웹표준
+  link: http://ilmol.com
+  source: ilmol/ilmol.github.io
+  desc: HTML, CSS, JS, BROWSER, 웹표준, PRODUCT, DESIGN, UX/UI/AX
