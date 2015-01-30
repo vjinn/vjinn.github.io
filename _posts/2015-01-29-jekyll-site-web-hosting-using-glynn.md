@@ -30,7 +30,7 @@ $ gem install glynn --source http://gemcutter.org
  - ftp Username : glynn
  - ftp Password : 1234
 
-위의 가상의 정보로 Glynn을 사용하기 위해 `_config.yml` 파일에 다음의 내용을 추가하면 된다.
+위의 가상 정보로 Glynn을 사용한다면 `_config.yml` 파일에 다음의 내용을 추가하면 된다.
 
 ```yaml
 ftp_host: 'glynn.jekyllis.com'
