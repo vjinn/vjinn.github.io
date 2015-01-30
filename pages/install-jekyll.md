@@ -244,13 +244,15 @@ $ gem install jekyll
 
 다음의 동영상과 같이 보면 감 온다.
 
-[How to Install Jekyll OS X Yosemite with RVM (Without Xcode)](http://youtu.be/2j1Xt-azKss)
+ - [How to Install Jekyll OS X Yosemite with RVM (Without Xcode)](http://youtu.be/2j1Xt-azKss)
 
 위의 동영상은 테스트를 위해 전체 과정을 진행한 후에 리셋한 것이므로 나오지 않는데, 운영체제 처음 설치 후 RVM을 설치한다면 **경로 설정에 대한 물음**이 있을 수 있다. 주의하여 읽은 후 **'yes'** 입력 후 진행하면 된다. 또 **Homebrew** 관련한 내용도 설치 과정에서 나오는데, 지킬 사용이 목적이라면 세심하게 확인할 필요는 없다고 생각한다. RVM을 사용하면 된다.
 
 OS X Yosemite에는 루비 2.0 버전이 이미 있지만, 지킬 3.x 버전은 루비 2.2 버전을 지원하므로 RVM으로 버전업 하는 것이 좋을 것이다.
 
 맥이 주 운영체제라면 어느 환경 못지 않게 지킬 사용이 편할 것이다.
+
+---
 
 ## 윈도즈에 지킬 설치와 사이트 생성
 
@@ -286,6 +288,4 @@ OS X Yosemite에는 루비 2.0 버전이 이미 있지만, 지킬 3.x 버전은 
 
 다음의 동영상은 이 페이지 내용의 일부이다. 참고하기 바란다.
 
-<div class="video">
-<iframe src="//www.youtube.com/embed/T_ZhqkshtKk" frameborder="0" allowfullscreen></iframe>
-</div>
+ - [How to Install Jekyll on Windows](http://youtu.be/T_ZhqkshtKk)
