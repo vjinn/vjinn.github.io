@@ -29,7 +29,7 @@ number: 1
  - 윈도즈 7 64비트의 VMware Player 7.0 에서
  - 우분투 14.04 64비트 데스크톱 버전 환경
  - LEOPOLD FC750R Tenkeyless (적축 / 측각 / 네이비 블루) 키보드 사용
- - gedit (드물게 nano, vim 사용)
+ - [Stackedit](https://stackedit.io/)
  - IE 9 이상, 나머지 표준 웹브라우저 지원
  - 한글은 [나눔고딕](http://hangeul.naver.com/2014/nanum#)과 맑은고딕 순서로 적용
 
