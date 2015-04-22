@@ -57,6 +57,7 @@ Atom 실행 후 `File > Settings > Install > Search : markdown-writer > Install`
  - 간편한 이미지 삽입 흐름
  - 폴더 분류 관리
  - GFM(GitHub Flavored Markdown)
+ - 프론트 메터 지원
  - `Ctrl + C` 조합으로 실시간 저장 (클라우드 싱크)
  - 아주 간편한 수정 및 업데이트
 
