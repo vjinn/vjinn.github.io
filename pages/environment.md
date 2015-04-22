@@ -66,6 +66,10 @@ number: 2
 
  - [Koding.com에서 지킬 설치하고 사용하기]({% post_url 2015-01-24-install-jekyll-and-using-on-koding-com %})
 
+### 지킬 설치하지 않고 지킬링 하기
+
+ - [더 간편하고 가벼우며 홀가분한 지킬링]({% post_url 2015-02-03-using-jekyll-with-github-pages %})
+
 ---
 
 ## 테마 선정할 때
