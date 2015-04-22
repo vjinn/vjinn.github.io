@@ -68,7 +68,7 @@ number: 2
 
 ### 지킬 설치하지 않고 지킬링 하기
 
- - [더 간편하고 가벼우며 홀가분한 지킬링]({% post_url 2015-02-03-using-jekyll-with-github-pages %})
+ - [더 간편하고 가벼우며 홀가분한 지킬링]({% post_url 2015-04-22-the-best-jekylling %})
 
 ---
 
