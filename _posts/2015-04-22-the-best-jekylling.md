@@ -62,6 +62,8 @@ Atom 실행 후 `File > Settings > Install > Search : markdown-writer > Install`
 
 나열한 내용 외에 다른 기능들이 있지만 필요할 때 확인하면 된다. 지킬에 한정하여 볼 때 너무 과분한 기능들이다. 이미 많은 사람이 사용하고 있으므로 세부 내용은 검색하면 얻을 수 있을 것이다.
 
+[![Stackedit Markdown]({{ site.il }}/stackedit_markdown.png)]({{ site.il }}/stackedit_markdown.png)
+
 에디터를  설치하고 플러그인(패키지) 형식을 추가하여 지킬링 하는 방법과 비교할 때 (크롬에 제한적이지만) 웹브라우저와 인터넷만 가능하다면 어디서든 마크다운으로 포스팅, 깃허브 퍼블리싱(푸시), 클라우드 보관(싱크)이 가능하다는 점은 지킬링에 가장 최적화되어 있다고 생각한다.
 
 ## Github
