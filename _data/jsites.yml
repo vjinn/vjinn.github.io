@@ -38,11 +38,6 @@
   source: sungchi/sungchi.github.io
   desc: 폭두직딩 성치 웹사이트
 
-- name: SmallDB 
-  link: http://smalldb.net
-  source: SmallDBA/smalldba.github.com
-  desc: 보고, 듣고, 배우고, 삽푸는 것들의 기록
-
 - name: 웹으로 말하기
   link: http://mytory.net
   source: mytory/mytory.github.io
