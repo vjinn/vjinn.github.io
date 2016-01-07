@@ -12,7 +12,7 @@ title: Install Jekyll
 description: Enjoy Jekylling!
 tagline: $ gem install jekyll
 keywords: Jekyll, 지킬, 마크다운, markdown, kramdown, redcarpet, rdiscount, Github, Github pages, 깃허브, 깃허브 저장소, repository, gem install jekyll, jekyll 루비, ruby, liquid, pygments, GFM
-url: http://vjinn.github.io
+url: https://vjinn.github.io
 baseurl: /
 
 siteimg: jekylllogo.png
