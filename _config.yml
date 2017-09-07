@@ -1,0 +1,37 @@
+# Dependencies
+markdown: redcarpet
+redcarpet:
+ extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "tables"]
+
+# Permalinks
+permalink: /:categories/:title/
+relative_permalinks: false
+
+# Setup
+title: Install Jekyll
+description: Enjoy Jekylling!
+tagline: $ gem install jekyll
+keywords: Jekyll, 지킬, 마크다운, markdown, kramdown, redcarpet, rdiscount, Github, Github pages, 깃허브, 깃허브 저장소, repository, gem install jekyll, jekyll 루비, ruby, liquid, pygments, GFM
+url: https://vjinn.github.io
+baseurl: /
+
+siteimg: jekylllogo.png
+
+author:
+ name: Veteran
+
+il: http://jcdn.ossguide.net/jekyllis.com
+jl: http://jekyllrb.com
+jkl: http://jekyllrb-ko.github.io
+gl: https://github.com
+repo: https://github.com/vjinn/vjinn.github.io
+
+disqus_id: installjekyll
+googleanal_id: UA-58958751-1
+googlewm_id: eZulubewotmp1QjXB_4Rc4ZH6J-VGg7kA3WcVWWtYxE
+naveranal_id: d5ab09affbfe98
+naverwm_id: 9f31b38fb10b5fbb750caab37be28692a1540943
+
+gems: 
+ - jekyll-mentions
+ - jekyll-sitemap
