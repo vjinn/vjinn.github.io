@@ -88,7 +88,7 @@ html {
 .masthead {
   padding-top:    1rem;
   padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   border-bottom: 1px solid #eee;
 }
 .masthead-title {
