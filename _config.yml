@@ -35,3 +35,4 @@ naverwm_id: 9f31b38fb10b5fbb750caab37be28692a1540943
 gems: 
  - jekyll-mentions
  - jekyll-sitemap
+ - jekyll-redirect-from

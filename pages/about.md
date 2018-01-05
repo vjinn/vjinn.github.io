@@ -20,18 +20,6 @@ number: 1
  - [Demo](http://lanyon.getpoole.com)
  - @mdo
 
-아래는 이 사이트의 깃허브 저장소이다.
-
- - [Repo.]({{ site.repo }})
-
-이 사이트와 관련한 세부사항은 아래와 같다.
-
- - 윈도즈 7 64비트의 크롬 웹브라우저에서
- - LEOPOLD FC750R Tenkeyless (적축 / 측각 / 네이비 블루) 키보드로
- - [Stackedit](https://stackedit.io/) 크롬앱으로 작성
- - IE 9 이상, 나머지 표준 웹브라우저 지원
- - 한글은 [나눔고딕](http://hangeul.naver.com/2014/nanum#)과 맑은고딕 순서로 적용
-
 사이트 내 콘텐츠의 모든 링크 타겟은 현재창이므로 불편하다면 `Ctrl +` 클릭하면 된다.
 
 *Enjoy Jekylling!*
