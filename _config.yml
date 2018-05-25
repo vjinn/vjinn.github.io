@@ -18,7 +18,7 @@ baseurl: /
 siteimg: jekylllogo.png
 
 author:
- name: Veteran
+ name: smellslike
 
 il: https://vjinn.github.io/public/images
 jl: http://jekyllrb.com
@@ -26,7 +26,6 @@ jkl: http://jekyllrb-ko.github.io
 gl: https://github.com
 repo: https://github.com/vjinn/vjinn.github.io
 
-disqus_id: installjekyll
 googleanal_id: UA-58958751-1
 googlewm_id: eZulubewotmp1QjXB_4Rc4ZH6J-VGg7kA3WcVWWtYxE
 naveranal_id: d5ab09affbfe98
